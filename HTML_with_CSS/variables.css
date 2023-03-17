@@ -1,0 +1,30 @@
+div ol, ul, ul ol, ul ol ul {
+  font-size: 14px;
+  padding: 10px;
+  margin: 20px; }
+
+div {
+  font-size: 20px; }
+  div h1 {
+    font-weight: bold; }
+  div ol {
+    color: red; }
+    div ol ul {
+      color: lime; }
+
+ul {
+  color: red; }
+  ul ol {
+    color: pink; }
+    ul ol ul {
+      color: aqua; }
+
+p {
+  font-size: 25px;
+  color: green; }
+
+h1 {
+  font-size: 45px;
+  color: green; }
+
+/*# sourceMappingURL=variables.css.map */

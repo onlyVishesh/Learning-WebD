@@ -1,0 +1,42 @@
+$color1: red;
+$color2: green;
+%list {
+    font-size: 14px;
+    padding: 10px;
+    margin: 20px;
+}
+
+div {
+    font-size: 20px;
+
+    h1 {
+        font-weight: bold;
+    }
+    ol {
+        @extend %list;
+        color: $color1;
+        ul {
+            color: lime;
+        }
+    }
+}
+ul {
+    @extend %list;
+    color: $color1;
+    ol {
+        @extend %list;
+        color: pink;
+        ul {
+            @extend %list;
+            color: aqua;
+        }
+    }
+}
+p {
+    font-size: 25px;
+    color: $color2
+}
+h1 {
+    font-size: 45px;
+    color: $color2
+}

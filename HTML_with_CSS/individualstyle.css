@@ -1,0 +1,22 @@
+.group {
+    color:dodgerblue;
+    text-align: left;
+}
+
+#first {
+    color: pink;
+    text-align: center;
+}
+#basic_para {
+    color: limegreen
+}
+#detail_para {
+    color:crimson;
+    text-align: left;
+    padding: 10px;
+}
+#forth {
+    color:chartreuse;
+    text-align: left;
+    padding: 20px;
+}

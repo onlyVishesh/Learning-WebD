@@ -1,0 +1,83 @@
+<!DOCTYPE html>   
+<html lang="en">  
+    <head>
+        <title>Animated Page</title>
+        <style>
+
+            @keyframes growleft {
+                from {
+                    font-size: 20px;
+                    left: 0%;
+                    top: 0%;
+                }
+                to {
+                    font-size: 100px;
+                    color: blue;
+                    left: 34%;
+                    top: 34%;
+                }
+                0% {
+                    color: aliceblue;
+                }
+                25% {
+                    color:aquamarine;
+                }
+                50% {
+                    color:aqua;
+                }
+                75% {
+                    color:blue;
+                }
+            }
+
+            #lift {
+                position:fixed;
+                left: 0%;
+                animation-name: growleft;
+                animation-duration: 2s;
+                animation-fill-mode: forwards;
+            }
+
+            @keyframes growright {
+                from {
+                    font-size: 20px;
+                    right: 0%;
+                    top: 0%;
+                }
+                to {
+                    font-size: 100px;
+                    color: blue;
+                    right: 34%;
+                    top: 34%;
+                }
+                0% {
+                    color: aliceblue;
+                }
+                25% {
+                    color:aquamarine;
+                }
+                50% {
+                    color:aqua;
+                }
+                75% {
+                    color:blue;
+                }
+            }
+
+            #right {
+                position: fixed;
+                right: 0%;
+                animation-name: growright;
+                animation-duration: 2s;
+                animation-fill-mode: forwards;
+            }
+
+        </style>
+    
+
+    </head>
+    <body>
+        <h1 id="lift">Welcome!</h1>
+        <h1 id="right">Welcome!</h1>
+    </body>
+</html>

@@ -1,0 +1,12 @@
+
+
+#count {
+    font-size: 50px;
+    position: relative;
+    left: 75px;
+}
+
+#dec, #reset, #inc {
+    width: 60px;
+    font-size: 20px;
+}

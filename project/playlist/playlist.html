@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JavaScript Complete course</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            background-color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 75px;
+            z-index: 10;
+        }
+
+        .left-header {
+            display: flex;
+            align-items: center;
+            width: 200px;
+            margin-left: 15px;
+
+
+        }
+
+        .centre-header {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            margin-left: 100px;
+            margin-right: 100px;
+            max-width: 825px;
+
+        }
+
+        .right-header {
+            width: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-right: 20px;
+            flex-shrink: 0;
+
+        }
+
+        .menu {
+            width: 35px;
+            margin-right: 20px;
+        }
+
+        .logo {
+            width: 130px;
+
+        }
+
+        .search-bar {
+            flex: 1;
+            height: 40px;
+            padding-left: 12px;
+            font-size: 20px;
+            border-width: 2px;
+            border-style: solid;
+            width: 0;
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+
+        }
+
+        .search-bar::placeholder {
+            font-family: Roboto, Arial;
+            font-size: 20px;
+        }
+
+        .search {
+            width: 20px;
+            padding: 9px;
+            padding-left: 30px;
+            padding-right: 20px;
+            border-radius: 10px;
+
+
+
+        }
+
+        .voice {
+            width: 26px;
+        }
+
+        .upload {
+            height: 30px;
+        }
+
+        .bell {
+            height: 30px;
+        }
+
+        .pic {
+            height: 40px;
+            border-radius: 20px;
+            border-width: 2px;
+            border-style: solid;
+            border-color: rgb(129, 129, 191);
+        }
+
+        .side-bar {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: white;
+            align-items: center;
+            width: 100px;
+            height: 300px;
+            padding-top: 50px;
+            background-color: white;
+            position: fixed;
+            top: 75px;
+            left: 0;
+            right: 0;
+            font-family: Roboto, Arial;
+        }
+
+        .home {
+            height: 25px;
+        }
+
+        .sub {
+            height: 25px;
+        }
+
+        .library {
+            height: 25px;
+        }
+
+        .bar-home,
+        .bar-sub,
+        .bar-library {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 60px;
+            justify-content: space-between;
+        }
+
+        .preview {
+            margin: 20px;
+            width: 450px;
+            height: 675px;
+            background-color: #a48d0f;
+            border-radius: 20px;
+            font-family: Roboto, Arial;
+            position: fixed;
+            top: 75px;
+            left: 100px;
+            right: 0;
+
+        }
+
+        .preview-image {
+            width: 385px;
+            margin: 35px;
+            border-radius: 10px;
+            margin-bottom: 0px;
+
+        }
+
+        .text {
+            color: #fff;
+            font-size: 33px;
+            font-weight: 600;
+            margin-left: 35px;
+            margin-top: 23px;
+            line-height: 50px;
+        }
+
+        .name {
+            margin-left: 35px;
+            margin-top: 25px;
+            color: #fff;
+            font-size: 20px;
+
+        }
+
+        .detail {
+            margin-left: 35px;
+            margin-top: 8px;
+            color: #e0d9d9;
+
+        }
+
+        .list,
+        .share,
+        .dots {
+            width: 30px;
+            margin-top: 20px;
+            margin-right: 5px;
+            padding: 6px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 33px;
+        }
+
+        .list {
+            margin-left: 35px;
+
+        }
+
+        .opt {
+            display: flex;
+            margin-right: 35px;
+            margin-top: 25px;
+        }
+
+        .shuffle,
+        .play {
+            width: 40px
+        }
+
+        .play {
+            background-color: #fff;
+        }
+
+        .preview-play {
+            background-color: #fff;
+            width: 170px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin-left: 35px;
+            padding-right: 20px;
+            border-radius: 25px;
+            padding-left: 20px;
+
+        }
+
+        .preview-shuffle {
+            background-color: rgba(255, 255, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding-right: 20px;
+            width: 170px;
+            margin-left: 35px;
+            border-radius: 25px;
+            padding-left: 20px;
+            align-content: center;
+        }
+
+        .video {
+            display: flex;
+            vertical-align: row;
+            margin-bottom: -5px;
+
+        }
+
+        .video-no {
+            font-family: Roboto, Arial;
+            font-size: 20px;
+            width: 30px;
+            align-self: center;
+        }
+
+        .videos {
+            width: 200px;
+            border-radius: 10px;
+        }
+
+        .video-detail {
+            margin-left: 10px;
+        }
+
+        .title {
+            font-family: Roboto, Arial;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .time {
+            font-family: Roboto, Arial;
+            color: rgb(132, 123, 123);
+            font-size: 15px;
+            margin-top: 16px;
+
+        }
+
+        .timing {
+            width: 45px;
+            height: 22px;
+            text-align: center;
+            font-family: Roboto, Arial;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 4px;
+            color: white;
+            position: relative;
+            top: -34px;
+            left: 142px;
+            padding: 1px;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+
+        }
+
+        a:hover {
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body style="
+            padding-top: 115px;
+            padding-left: 580px;
+            background-color: #fff;
+            width: 1080px">
+    <div class="header">
+        <div class="left-header">
+            <img class="menu" src="images/pngwing.com.png">
+            <a href="https://www.youtube.com/"><img class="logo" src="images/logo.png"></a>
+        </div>
+        <div class="centre-header">
+            <input class="search-bar" type="text" placeholder="Search">
+            <button style="
+                    background-color: #f8f8f8;
+                    margin-left: -1px;
+                    ">
+                <img class="search" src="images/search.png">
+            </button>
+            <button style="background-color: transparent;
+                border: 0;
+                border-radius: 13px;
+                margin-left: 20px;
+            ">
+                <img class="voice" src="images/voice.png">
+            </button>
+        </div>
+        <div class="right-header">
+            <img class="upload" src="images/video.png">
+            <img class="bell" src="images/bell.png">
+            <img class="pic" src="images/unnamed.jpg">
+        </div>
+    </div>
+    <div class="side-bar">
+        <a href="https://www.youtube.com/">
+            <div class="bar-home">
+                <img class="home" src="images/home.png">
+                Home
+            </div>
+        </a>
+        <a href="https://www.youtube.com/feed/subscriptions">
+            <div class="bar-sub">
+                <img class="sub" src="images/subscribe.png">
+                Subscript...
+            </div>
+        </a>
+        <a href="https://www.youtube.com/feed/library">
+            <div class="bar-library">
+                <img class="library" src="images/library.png">
+                Library
+            </div>
+        </a>
+
+    </div>
+    <div class="preview">
+        <img class="preview-image" src="images/preview.webp" alt="">
+        <div class="text">
+            JavaScript Complete course
+        </div>
+        <div class="name">
+            Coder's Gyan
+        </div>
+        <div class="detail">
+            14 videos 1,42,980 views Last updated on 15-Aug-2021
+        </div>
+        <div>
+            <img class="list" src="images/list.png">
+            <img class="share" src="images/share.png">
+            <img class="dots" src="images/dots.png">
+        </div>
+        <div class="opt">
+            <div class="preview-play">
+                <img class="play" src="images/library.png">
+                Play all
+            </div>
+            <div class="preview-shuffle">
+                <img class="shuffle" src="images/library.png">
+                Shuffle
+            </div>
+        </div>
+        <div style="color:#fff;
+                margin-left: 35px;
+                margin-top: 10px;
+                font-size: 15px;
+                font-weight: 500;">
+            ...More
+        </div>
+    </div>
+    <div class="playlist">
+        <a href="https://www.youtube.com/watch?v=C5KMrqNc3eA&list=PLXQpH_kZIxTV7slsiwQarBEVXHgQWDhLQ&index=1&pp=iAQB">
+            <div class="video">
+                <div class="video-no">
+                    1
+                </div>
+                <div>
+                    <img class="videos" src="images/1.webp" alt="">
+                    <div class="timing">
+                        1:02
+                    </div>
+                </div>
+                <div class="video-detail">
+                    <div class="title">
+                        Introduction: JavaScript complete course in 2021 in Hindi 🔥🔥🔥#1
+                    </div>
+                    <div class="time">
+                        Coder's Gyan • 30K views • 2 years ago
+                    </div>
+                </div>
+
+            </div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=SCZYFI-aABc&list=PLXQpH_kZIxTV7slsiwQarBEVXHgQWDhLQ&index=2&pp=iAQB">
+            <div class="video">
+                <div class="video-no">
+                    2
+                </div>
+                <div>
+                    <img class="videos" src="images/2.webp" alt="">
+                    <div class="timing">
+                        12:44
+                    </div>
+                </div>
+                <div class="video-detail">
+                    <div class="title">
+                        JavaScript history: JavaScript complete course in 2021 in Hindi 🔥🔥🔥#2
+                    </div>
+                    <div class="time">
+                        Coder's Gyan • 16K views • 2 years ago
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=aXYp-clXm2s&list=PLXQpH_kZIxTV7slsiwQarBEVXHgQWDhLQ&index=3&pp=iAQB">
+            <div class="video">
+                <div class="video-no">
+                    3
+                </div>
+                <div>
+                    <img class="videos" src="images/3.webp" alt="">
+                    <div class="timing">
+                        6:54
+                    </div>
+                </div>
+                <div class="video-detail">
+                    <div class="title">
+                        Use of JavaScript: JavaScript complete course in 2021 in Hindi 🔥🔥🔥 #3
+                    </div>
+                    <div class="time">
+                        Coder's Gyan • 10K views • 2 years ago
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=tlauDv_lPIA&list=PLXQpH_kZIxTV7slsiwQarBEVXHgQWDhLQ&index=4&pp=iAQB">
+            <div class="video">
+                <div class="video-no">
+                    4
+                </div>
+                <div>
+                    <img class="videos" src="images/4.webp" alt="">
+                    <div class="timing">
+                        16:00
+                    </div>
+                </div>
+                <div class="video-detail">
+                    <div class="title">
+                        JavaScript setup: JavaScript complete course in 2021 in Hindi 🔥🔥🔥 #4
+                    </div>
+                    <div class="time">
+                        Coder's Gyan • 11K views • 2 years ago
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=FXjmwLv-ZYM&list=PLXQpH_kZIxTV7slsiwQarBEVXHgQWDhLQ&index=5&pp=iAQB">
+            <div class="video">
+                <div class="video-no">
+                    5
+                </div>
+                <div>
+                    <img class="videos" src="images/5.webp" alt="">
+                    <div class="timing">
+                        6:19
+                    </div>
+                </div>
+                <div class="video-detail">
+                    <div class="title">
+                        Object overview: JavaScript complete course in 2021 in Hindi 🔥🔥🔥 #5
+                    </div>
+                    <div class="time">
+                        Coder's Gyan • 12K views • 2 years ago
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=CFHX0FeOq7w&list=PLXQpH_kZIxTV7slsiwQarBEVXHgQWDhLQ&index=6&pp=iAQB">
+            <div class="video">
+                <div class="video-no">
+                    6
+                </div>
+                <div>
+                    <img class="videos" src="images/6.webp" alt="">
+                    <div class="timing">
+                        18:14
+                    </div>
+                </div>
+                <div class="video-detail">
+                    <div class="title">
+                        Var vs Let vs Const: JavaScript complete course in 2021 in Hindi 🔥🔥🔥 #6
+                    </div>
+                    <div class="time">
+                        Coder's Gyan • 12K views • 2 years ago
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=wPNXpc98wKY&list=PLXQpH_kZIxTV7slsiwQarBEVXHgQWDhLQ&index=7&pp=iAQB">
+            <div class="video">
+                <div class="video-no">
+                    7
+                </div>
+                <div>
+                    <img class="videos" src="images/7.webp" alt="">
+                    <div class="timing">
+                        20:26
+                    </div>
+                </div>
+                <div class="video-detail">
+                    <div class="title">
+                        Data types: JavaScript complete course in 2021 in Hindi 🔥🔥🔥 #7
+                    </div>
+                    <div class="time">
+                        Coder's Gyan • 10K views • 2 years ago
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=IdZyHTFgpeA&list=PLXQpH_kZIxTV7slsiwQarBEVXHgQWDhLQ&index=8&pp=iAQB">
+            <div class="video">
+                <div class="video-no">
+                    8
+                </div>
+                <div>
+                    <img class="videos" src="images/8.webp" alt="">
+                    <div class="timing">
+                        45:31
+                    </div>
+                </div>
+                <div class="video-detail">
+                    <div class="title">
+                        Operators: JavaScript complete course in 2021 in Hindi 🔥🔥🔥 #8
+                    </div>
+                    <div class="time">
+                        Coder's Gyan • 12K views • 2 years ago
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=SzTvrAhhEAo&list=PLXQpH_kZIxTV7slsiwQarBEVXHgQWDhLQ&index=9&pp=iAQB">
+            <div class="video">
+                <div class="video-no">
+                    9
+                </div>
+                <div>
+                    <img class="videos" src="images/9.webp" alt="">
+                    <div class="timing">
+                        1:00:00
+                    </div>
+                </div>
+                <div class="video-detail">
+                    <div class="title">
+                        Arrays: JavaScript complete course in 2021 in Hindi 🔥🔥🔥 #9
+                    </div>
+                    <div class="time">
+                        Coder's Gyan • 33K views • 1 years ago
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=7DrGsJegIOY&list=PLXQpH_kZIxTV7slsiwQarBEVXHgQWDhLQ&index=10&pp=iAQB">
+            <div class="video">
+                <div class="video-no">
+                    10
+                </div>
+                <div>
+                    <img class="videos" src="images/10.webp" alt="">
+                    <div class="timing">
+                        43:12
+                    </div>
+                </div>
+                <div class="video-detail">
+                    <div class="title">
+                        Functions: JavaScript complete course in 2021 in Hindi 🔥🔥🔥 #10
+                    </div>
+                    <div class="time">
+                        Coder's Gyan • 22K views • 1 years ago
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=OLbM3f68Gk0&list=PLXQpH_kZIxTV7slsiwQarBEVXHgQWDhLQ&index=11&pp=iAQB">
+            <div class="video">
+                <div class="video-no">
+                    11
+                </div>
+                <div>
+                    <img class="videos" src="images/11.webp" alt="">
+                    <div class="timing">
+                        28:36
+                    </div>
+                </div>
+                <div class="video-detail">
+                    <div class="title">
+                        Asynchronous JavaScript: JavaScript complete course in 2021 in Hindi 🔥🔥🔥 #11
+                    </div>
+                    <div class="time">
+                        Coder's Gyan • 19K views • 1 years ago
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=c-0P67cxTbI&list=PLXQpH_kZIxTV7slsiwQarBEVXHgQWDhLQ&index=12&pp=iAQB">
+            <div class="video">
+                <div class="video-no">
+                    12
+                </div>
+                <div>
+                    <img class="videos" src="images/12.webp" alt="">
+                    <div class="timing">
+                        51:44
+                    </div>
+                </div>
+                <div class="video-detail">
+                    <div class="title">
+                        Callback and promises in 2021 in Hindi 🔥🔥🔥 #12
+                    </div>
+                    <div class="time">
+                        Coder's Gyan • 38K views • 1 years ago
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=4sQaUNDZq3w&list=PLXQpH_kZIxTV7slsiwQarBEVXHgQWDhLQ&index=13&pp=iAQB">
+            <div class="video">
+                <div class="video-no">
+                    13
+                </div>
+                <div>
+                    <img class="videos" src="images/13.webp" alt="">
+                    <div class="timing">
+                        1:13:20
+                    </div>
+                </div>
+                <div class="video-detail">
+                    <div class="title">
+                        Dom manipulation in 2021 in Hindi 🔥🔥🔥 #13
+                    </div>
+                    <div class="time">
+                        Coder's Gyan • 45K views • 1 years ago
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=O-rzja-2OPk&list=PLXQpH_kZIxTV7slsiwQarBEVXHgQWDhLQ&index=14&pp=iAQB">
+            <div class="video">
+                <div class="video-no">
+                    14
+                </div>
+                <div>
+                    <img class="videos" src="images/14.webp" alt="">
+                    <div class="timing">
+                        2:06:50
+                    </div>
+                </div>
+                <div class="video-detail">
+                    <div class="title">
+                        ES6 ( Ecmascript 2015 ) in 2021 in Hindi 🔥🔥🔥 #14
+                    </div>
+                    <div class="time">
+                        Coder's Gyan • 28K views • 1 years ago
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+
+</body>
+
+</html>

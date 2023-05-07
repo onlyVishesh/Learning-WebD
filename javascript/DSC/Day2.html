@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const Taj = {
+            taj: 25,
+            mahal:36,
+            lucknow:240,
+            agra:245,
+            jodha: 30
+
+        }
+        let sum = 0;
+        const value = Object.values(Taj);
+        for (let i = 0; i<value.length;i++){
+            sum += value[i];
+        };
+        console.log(Taj);
+        console.log(sum);
+
+        const a = {
+            fname: "Vishesh"
+        };
+        const b = {
+            lname: "Maurya"
+        };
+        // spread operate ... 
+        const c = {...a,...b};
+        console.log(c)
+
+        const arr = [
+            {
+                name: "Vishesh",
+                age: 19
+            },
+            {
+                name: "Akhil",
+                age: 21
+            },
+            {
+                name: "Utkal",
+                age: 19
+            }
+        ];
+        arr.map(data)
+    </script>
+
+</body>
+</html>

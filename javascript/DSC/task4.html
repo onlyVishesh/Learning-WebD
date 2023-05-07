@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="button">Click</button>
+    <div id="asd"></div>
+    <script>
+        function a1(a) {
+            return function a2(b) {
+                return function a3(c) {
+                    return function a4(d) {
+                        return function a5(e) {
+                            const list = [a,b,c,d,e];
+                            return list.sort();
+                        } 
+                    }
+                }
+            }
+        }
+        console.log(a1(3)(23)(2)(345)(4))
+        document.getElementById("button").onclick = ()=>{
+            
+            const block = document.createElement("div")
+            block.innerHTML = `<input type="text" placeholder="Enter value" onblur="save()">
+                                 <button id="submit" type="submit"></button>`
+            document.getElementById("submit").onclick = () => {
+            function save() {
+                console.log(document.querySelector('input').value)
+                
+                }}
+            document.getElementById("asd").appendChild(block);
+
+
+        }
+    </script>
+</body>
+</html>

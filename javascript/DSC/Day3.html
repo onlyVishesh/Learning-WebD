@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Topics - closers, currying, call back
+        // function add(a,b) {
+        //     console.log(a+b);
+        // }
+        // add(3,6);
+
+        function abc(a) {
+            console.log("Here we call abc");
+            return function bca(b) {
+                console.log("Here we call bca");
+                return function cab(c) {
+                    console.log("Here we call cab");
+                    console.log(a+b+c);
+                }
+            } 
+        }
+
+        const A = abc(5);
+        console.log(A);
+        const B = A(10);
+        console.log(B);
+        const C = B(20);
+        console.log(C);
+
+        // OR
+
+        // abc(5)(10)(20);
+
+        function times(num) {
+            return num*15;
+        }
+
+        function mul(num,times) {
+            return times(num);
+        }
+
+        mul(20);
+
+
+
+    </script>
+</body>
+</html>

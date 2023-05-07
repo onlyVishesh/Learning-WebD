@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        list = [
+            {
+                Name:"Vishesh",
+                Course:"Btech",
+                Branch:"CSE",
+                Group:2,
+                Test:"PreCT",
+                Marks:{
+                    PPS:54,
+                    Electrical:58,
+                    Maths:48,
+                    Ecology:59,
+                    Physics:47
+                },
+                Percentage:87.34,
+            },
+            {
+                Name:"Ram",
+                Course:"Btech",
+                Branch:"CS",
+                Group:1,
+                Test:"PreCT",
+                Marks:{
+                    Mechanical:34,
+                    Electronics:38,
+                    Maths:46,
+                    Soft_skills:59,
+                    Chemistry:47
+                },
+                Percentage:86.74,
+            }
+        ];
+        console.log(list);
+        console.log(list.length);
+
+
+        list.push({
+            Name:"Shame",
+            Course:"Btech",
+            Branch:"CE",
+            Group:1,
+            Test:"PreCT",
+            Marks:{
+                Mechanical:33,
+                Electronics:48,
+                Maths:45,
+                Soft_skills:49,
+                Chemistry:45
+            },
+            Percentage:79.74,
+        })
+        console.log(list);
+        list.pop();
+        console.log(list.length);
+        console.log(list[0].Name);
+        console.log(list[0].Marks);
+        console.log(list[1].Name);
+        console.log(list[1].Marks);
+        console.log(list[0].Marks.PPS);
+        console.log(list[1].Marks.Chemistry);
+        list[1].Marks.Chemistry = 45;
+        console.log(list[1].Marks.Chemistry);
+        list.shift({Name:"Sheela",
+            Course:"Btech",
+            Branch:"ME",
+            Group:2,
+            Test:"PreCT",
+            Marks:{
+                PPS:24,
+                Electrical:53,
+                Maths:44,
+                Ecology:59,
+                Physics:57
+            },
+            Percentage:71.74,
+        });
+        console.log(list)
+
+
+    </script>
+</body>
+</html>

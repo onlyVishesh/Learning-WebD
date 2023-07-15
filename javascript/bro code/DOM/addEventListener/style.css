@@ -1,0 +1,13 @@
+.innerDiv {
+    width: 15vw;
+    height: 15vw;
+    background-color: lightblue;
+    border: 1px solid;
+}
+
+.outerDiv {
+    width: 30vw;
+    height: 30vw;
+    background-color: lightblue;
+    border: 1px solid;
+}

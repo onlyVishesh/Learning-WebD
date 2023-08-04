@@ -1,114 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Check out</title>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Check out</title>
 </head>
+
 <body>
 	<div>
-
 		<div>
 			<h2>Cart Quantity</h2>
 		</div>
 
 		<div>
+			<button id="show-quantity">Show Quantity</button>
 
-			<button id="show-quantity">
-				Show Quantity
-			</button>
+			<button id="add-to-cart">Add to cart</button>
 
-			<button id="add-to-cart">
-				Add to cart
-			</button>
+			<button id="add-2">+2</button>
 
-			<button id="add-2">
-				+2
-			</button>
+			<button id="add-3">+3</button>
 
-			<button id="add-3">
-				+3
-			</button>
+			<button id="sub-2">-2</button>
 
-			<button id="sub-2">
-				-2
-			</button>
+			<button id="sub-3">-3</button>
 
-			<button id="sub-3">
-				-3
-			</button>
-
-			<button id="reset">
-				Reset Cart
-			</button>
-
+			<button id="reset">Reset Cart</button>
 		</div>
-		
 	</div>
 
 	<script>
 		let quantity = 0;
 
 		document.getElementById("show-quantity").onclick = () => {
-				console.log(`Cart Quantity ${quantity}`);
-		}
+			console.log(`Cart Quantity ${quantity}`);
+		};
 
 		document.getElementById("add-to-cart").onclick = () => {
-			if (quantity >=10){
-				console.log("Cart is full")
-			} else{
+			if (quantity >= 10) {
+				console.log("Cart is full");
+			} else {
 				quantity++;
 				console.log(`Added to Cart`);
 				console.log(`Cart has ${quantity} Quantity`);
 			}
-		}
+		};
 
 		document.getElementById("add-2").onclick = () => {
-			if (quantity >=9){
-				console.log("Cart is full")
-			} else{
+			if (quantity >= 9) {
+				console.log("Cart is full");
+			} else {
 				quantity += 2;
 				console.log(`Added 2 Item in Cart`);
 				console.log(`Cart has ${quantity} Quantity`);
 			}
-		}
+		};
 
 		document.getElementById("add-3").onclick = () => {
-			if (quantity >=8){
-				console.log("Cart is full")
-			} else{
+			if (quantity >= 8) {
+				console.log("Cart is full");
+			} else {
 				quantity += 3;
 				console.log(`Added 3 Item in Cart`);
 				console.log(`Cart has ${quantity} Quantity`);
 			}
-		}
+		};
 
 		document.getElementById("sub-2").onclick = () => {
-			if (quantity <=1){
-				console.log("Cart is Empty")
-			} else{
+			if (quantity <= 1) {
+				console.log("Cart is Empty");
+			} else {
 				quantity -= 2;
 				console.log(`Added 2 Item in Cart`);
 				console.log(`Cart has ${quantity} Quantity`);
 			}
-		}
+		};
 
 		document.getElementById("sub-3").onclick = () => {
-			if (quantity <=2){
-				console.log("Cart is empty")
-			} else{
+			if (quantity <= 2) {
+				console.log("Cart is empty");
+			} else {
 				quantity -= 3;
 				console.log(`Added 3 Item in Cart`);
 				console.log(`Cart has ${quantity} Quantity`);
 			}
-		}
+		};
 
 		document.getElementById("reset").onclick = () => {
-				quantity=0;
-				console.log(`Reset Cart Quantity To ${quantity}`);
-		}
-
+			quantity = 0;
+			console.log(`Reset Cart Quantity To ${quantity}`);
+		};
 	</script>
 </body>
+
 </html>

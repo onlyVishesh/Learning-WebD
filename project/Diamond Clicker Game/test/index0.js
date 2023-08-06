@@ -5,10 +5,10 @@ let displayOutro = document.querySelector(".outro")
 
 document.querySelector(".intro").onclick = ()=>{
     displayIntro.style.display = "none"
-    playAudio()
-
 }
 
+
+// function to update outro elements
 function updateOutro() {
     document.querySelector(".totalClicks-span").innerHTML = totalClicks
     document.querySelector(".totalDiamonds-span").innerHTML = parseFloat(diamond.textContent) + totalSpend
@@ -16,18 +16,22 @@ function updateOutro() {
     cps=0
 }
 
+// onclick event to display outro
 document.querySelector(".outro").onclick = ()=>{
     resetGame()
-
 }
 
-
+// creating a function that changes class of upgrade based on if we can buy it or not
 function addEffects() {
+
+    // if we can buy it set class btn-green that have active property ie convert background color to green for few second onclick
     if (parseFloat(diamond.innerHTML) >= parseFloat(pickaxeCost.innerHTML)) {
 
         document.querySelector(".pickaxe-upgrade").classList.remove("btn-red") 
         document.querySelector(".pickaxe-upgrade").classList.add("btn-green") 
     }
+
+    // else set class btn-red that have active property ie convert background color to red for few second onclick
     else{
         document.querySelector(".pickaxe-upgrade").classList.remove("btn-green") 
         document.querySelector(".pickaxe-upgrade").classList.add("btn-red")
@@ -58,13 +62,10 @@ function addEffects() {
 }
 
 
-
-
-
-
-
 let diamond = document.querySelector(".diamond-count")
 let CPScount = document.querySelector(".cps-span")
+
+// creating some variables that are used code below
 
 let x =1
 let n = 0
@@ -77,7 +78,7 @@ let totalSpend = 0
 
 
 
-
+// Checks every second if player is maxed out and then display outro
 setInterval(()=>{
     if (totalClicks>0) {
         displayIntro.style.display = "none"
@@ -88,7 +89,6 @@ setInterval(()=>{
         parseFloat(diamond.textContent) > 999999999999 ){
             updateOutro()
             displayOutro.style.display = "block"
-            console.log("end")
         }
     addEffects()
 },10)
@@ -104,34 +104,28 @@ function incrementDiamond(x){
     
 }
 
-
+// change count to 0 every 1 second so that we can count cps
+// changing innerHTMl every second
 setInterval(() => {
     CPScount.innerHTML = cps+count*x
     count = 0;
-
-
-
 },1000)
 
 
 
-// let audio = 
 
-function playAudio() {
-    new Audio("assets/mouse-clicks-6849_pYBi0fH6.mp3").play();
-  }
+
+// onclick event to call functions
 
 document.querySelector(".diamond-img").onclick = () => {
     incrementDiamond(x);
     manualClickDisplay(event)
     count++
     totalClicks++
-    playAudio()
-    
 
 }
 
-
+// creating function that make clicks fade out
 function fadeout (element, duration, finalOpacity,callback) {
 
     let opacity = 1;
@@ -157,8 +151,11 @@ function manualClickDisplay(event) {
 
     // creation manualNumber element
     let manualClickElement = document.createElement("div");
+    // adding value to new div
     manualClickElement.textContent = "+" + Number(x)
+    // adding class to the div
     manualClickElement.classList.add("manualNumber","unselectable")
+    // adding new div to manualClickElement
     manualClicks.appendChild(manualClickElement)
 
     // getting position of mouse click
@@ -197,57 +194,57 @@ function manualClickDisplay(event) {
 
 
 function autoClickDisplay(event) {
+    // checking if cps is greater than 1
     if(cps > 0){
-    let autoClicks = document.querySelector(".diamond-img")
-    let autoClickElement = document.createElement("div");
-    autoClickElement.textContent = "+" + Number(cps)
-    autoClickElement.classList.add("autoNumber","unselectable")
-    autoClicks.appendChild(autoClickElement)
+        let autoClicks = document.querySelector(".diamond-img")
+        // creating new div
+        let autoClickElement = document.createElement("div");
+        // adding value to new div
+        autoClickElement.textContent = "+" + Number(cps)
+        // adding class to the div
+        autoClickElement.classList.add("autoNumber","unselectable")
+        // adding new div to autoClickElement
+        autoClicks.appendChild(autoClickElement)
 
 
-    
-    let y = window.getComputedStyle(document.querySelector(".autoNumber")).top
-    y = y.substring(0,y.length-2)
+        // to get top position value of element
+        let y = window.getComputedStyle(document.querySelector(".autoNumber")).top
+        y = y.substring(0,y.length-2)
 
 
-    let movementInterval = window.setInterval(()=>{
-        if(typeof autoClickElement == "undefined" && autoClickElement == null){
-            clearInterval(movementInterval)
-        }
-        y--
-        autoClickElement.style.top = y+"px"
-    })
+        // making element slowly rise up
+        let movementInterval = window.setInterval(()=>{
+            if(typeof autoClickElement == "undefined" && autoClickElement == null){
+                clearInterval(movementInterval)
+            }
+            y--
+            autoClickElement.style.top = y+"px"
+        })
 
-
-
-
-
-    // adding fadingout function
-    fadeout(autoClickElement,1500,0.5,()=>{
-        autoClickElement.remove()
-    })
+        // adding fadingout function
+        fadeout(autoClickElement,1500,0.5,()=>{
+            autoClickElement.remove()
+        })
     
     }
-
-    
-
-    
-
-
-    
-
-    
 
 }
 
 // For pickaxe Upgrade
 
+// declaring elements
 let pickaxeCost = document.querySelector(".pickaxe-cost")
 let pickaxeLevel = document.querySelector(".pickaxe-level")
 let clickIncrease = document.querySelector(".click-increase")
 
+
+// creating buyPickaxe function to buy it
 let buyPickaxe = () => {
+
+    // checking if we have sufficient amount to buy it
     if (parseFloat(diamond.innerHTML) >= parseFloat(pickaxeCost.innerHTML) && parseFloat(pickaxeLevel.innerHTML)<30) {
+
+        // changing html and values of it
         diamond.innerHTML = parseFloat(diamond.innerHTML) - parseFloat(pickaxeCost.innerHTML)
         totalSpend += parseFloat(pickaxeCost.innerHTML)
         pickaxeLevel.innerHTML = parseFloat(pickaxeLevel.innerHTML) +1;
@@ -255,7 +252,11 @@ let buyPickaxe = () => {
         n++;
         clickIncrease.innerHTML = x*2
         pickaxeCost.innerHTML = parseFloat(pickaxeCost.innerHTML) + Math.floor(Math.pow(2.1,n+2))*10
+
+        // calling function to change image of upgrade
         changePickaxeScr();
+
+        // changing html if it got maxed out
         if(parseFloat(pickaxeLevel.innerHTML)==30){
             pickaxeLevel.innerHTML = "Max";
             document.querySelector(".pickaxe-upgrade-cost-amount").innerHTML = "Unavalable"
@@ -266,61 +267,67 @@ let buyPickaxe = () => {
 
 
 
-
+// crating a function to change image scr on upgrade
 function changePickaxeScr() {
     switch (true) {
-        case parseFloat(pickaxeLevel.innerHTML)<3:
+        case parseFloat(pickaxeLevel.innerHTML)<5:
             document.querySelector(".pickaxe-icon").src ="./assets/pickaxes/fist.png"
           break;
-        case parseFloat(pickaxeLevel.innerHTML)<6:
-            document.querySelector(".pickaxe-icon").src ="./assets/pickaxes/stick.png"
+        case parseFloat(pickaxeLevel.innerHTML)<10:
+            document.querySelector(".pickaxe-icon").src ="./assets/pickaxes/Bronze_Pickaxe_m.png"
           break;
-        case parseFloat(pickaxeLevel.innerHTML)<9:
-            document.querySelector(".pickaxe-icon").src = "./assets/pickaxes/Bronze_Pickaxe_m.png"
-          break;
-        case parseFloat(pickaxeLevel.innerHTML)<12:
+        case parseFloat(pickaxeLevel.innerHTML)<15:
+            document.querySelector(".pickaxe-icon").src = "assets/pickaxes/Iron_Pickaxe_m.png"
+            break;
+        case parseFloat(pickaxeLevel.innerHTML)<20:
             document.querySelector(".pickaxe-icon").src = "assets/pickaxes/Steel_Pickaxe_m.png"
             break;
-        case parseFloat(pickaxeLevel.innerHTML)<15:
-            document.querySelector(".pickaxe-icon").src = "assets/pickaxes/Ancient_Pickaxe_m.png"
-            break;
-        case parseFloat(pickaxeLevel.innerHTML)<18:
-            document.querySelector(".pickaxe-icon").src = "assets/pickaxes/Mythan_Pickaxe_m.png"
-            break;
-        case parseFloat(pickaxeLevel.innerHTML)<21:
+        case parseFloat(pickaxeLevel.innerHTML)<25:
             document.querySelector(".pickaxe-icon").src = "assets/pickaxes/Crimsteel_Pickaxe_m.png"
             break;
-        case parseFloat(pickaxeLevel.innerHTML)<24:
+        case parseFloat(pickaxeLevel.innerHTML)<30:
+            document.querySelector(".pickaxe-icon").src = "assets/pickaxes/Mythan_Pickaxe_m.png"
+            break;
+        case parseFloat(pickaxeLevel.innerHTML)<35:
             document.querySelector(".pickaxe-icon").src = "assets/pickaxes/Cobalt_Pickaxe_m.png"
             break;
-        case parseFloat(pickaxeLevel.innerHTML)<27:
+        case parseFloat(pickaxeLevel.innerHTML)<40:
             document.querySelector(".pickaxe-icon").src = "assets/pickaxes/Varaxite_Pickaxe_m.png"
             break;
-        case parseFloat(pickaxeLevel.innerHTML)<30:
+        case parseFloat(pickaxeLevel.innerHTML)<45:
             document.querySelector(".pickaxe-icon").src = "assets/pickaxes/Magic_Pickaxe_m.png"
             break;
-        case parseFloat(pickaxeLevel.innerHTML)<33:
+        case parseFloat(pickaxeLevel.innerHTML)<50:
             document.querySelector(".pickaxe-icon").src = "assets/pickaxes/Umbral_Pickaxe_m.png"
+            break;
+        case parseFloat(pickaxeLevel.innerHTML)<55:
+            document.querySelector(".pickaxe-icon").src = "assets/pickaxes/Ancient_Pickaxe_m.png"
             break;
     }
       }
 
+// adding onclick event to call buyPickaxe function when clicked on pickaxe
 document.querySelector(".pickaxe-upgrade").onclick = () => {
-    buyPickaxe() 
-    playAudio()
-}
+    buyPickaxe() }
 
 
 
 
 // For miner Upgrade
 
+// declaring elements
 let minerCost = document.querySelector(".miner-cost")
 let minerLevel = document.querySelector(".miner-level")
 let cpsIncrease = document.querySelector(".cps-increase")
 
+
+// creating buyPickaxe function to buy it
 let buyMiner = () => {
+
+    // checking if we have sufficient amount to buy it
     if (parseFloat(diamond.innerHTML) >= parseFloat(minerCost.innerHTML) && parseFloat(minerLevel.innerHTML)<20) {
+
+        // changing html and values of it
         diamond.innerHTML = parseFloat(diamond.innerHTML) - parseFloat(minerCost.innerHTML)
         totalSpend += parseFloat(minerCost.innerHTML)
         minerLevel.innerHTML = parseFloat(minerLevel.innerHTML) + 1;
@@ -328,7 +335,11 @@ let buyMiner = () => {
         cps = parseFloat(cpsIncrease.innerHTML);
         cpsIncrease.innerHTML = parseFloat(cpsIncrease.innerHTML)*n3+Math.floor(Math.pow(1.5,n2+1))
         minerCost.innerHTML = parseFloat(minerCost.innerHTML) + Math.floor(Math.pow(3.6,n2+2))*10
-        changeMinerScr();
+
+        // calling function to change image of upgrade
+        // changeMinerScr();
+
+        // changing html if it got maxed out
         if(parseFloat(minerLevel.innerHTML)==20){
             minerLevel.innerHTML = "Max";
             document.querySelector(".miner-upgrade-cost-amount").innerHTML = "Unavalable"
@@ -339,48 +350,9 @@ let buyMiner = () => {
 }
 
 
-function changeMinerScr() {
-    switch (true) {
-        case parseFloat(minerLevel.innerHTML)<2:
-            document.querySelector(".miner-icon").src ="./assets/miners/onlyMiner.png"
-          break;
-        case parseFloat(minerLevel.innerHTML)<4:
-            document.querySelector(".miner-icon").src ="./assets/miners/stickMiner.png"
-          break;
-        case parseFloat(minerLevel.innerHTML)<6:
-            document.querySelector(".miner-icon").src ="./assets/miners/copperMiner.png"
-          break;
-        case parseFloat(minerLevel.innerHTML)<8:
-            document.querySelector(".miner-icon").src = "./assets/miners/ironMiner.png"
-            break;
-        case parseFloat(minerLevel.innerHTML)<10:
-            document.querySelector(".miner-icon").src = "./assets/miners/goldMiner.png"
-            break;
-        case parseFloat(minerLevel.innerHTML)<12:
-            document.querySelector(".miner-icon").src = "./assets/miners/blueMiner.png"
-            break;
-        case parseFloat(minerLevel.innerHTML)<14:
-            document.querySelector(".miner-icon").src = "./assets/miners/redMiner.png"
-            break;
-        case parseFloat(minerLevel.innerHTML)<16:
-            document.querySelector(".miner-icon").src = "./assets/miners/violetMiner.png"
-            break;
-        case parseFloat(minerLevel.innerHTML)<18:
-            document.querySelector(".miner-icon").src = "./assets/miners/greenMiner.png"
-            break;
-        case parseFloat(minerLevel.innerHTML)<20:
-            document.querySelector(".miner-icon").src = "./assets/miners/purpleMiner.png"
-            break;
-        case parseFloat(minerLevel.innerHTML)<22:
-            document.querySelector(".miner-icon").src = "./assets/miners/blackMiner.png"
-            break;
-    }
-      }
-
+// adding onclick event to call buyMiner function when clicked on miner
 document.querySelector(".miner-upgrade").onclick = () => {
-    buyMiner() 
-    playAudio()
-}
+    buyMiner() }
 
 setInterval(() => {
     incrementDiamond(cps)
@@ -388,16 +360,22 @@ setInterval(() => {
 },1000)
 
 
+// For mines Upgrade
 
-
-
+// declaring elements
 let minesCost = document.querySelector(".mines-cost")
 let minesLevel = document.querySelector(".mines-level")
 let minesIncrease = document.querySelector(".mines-increase")
 let n3 = 1
 
+
+// creating buyPickaxe function to buy it
 let buyMines = () => {
+
+    // checking if we have sufficient amount to buy it
     if (parseFloat(diamond.innerHTML) >= parseFloat(minesCost.innerHTML) && parseFloat(minesLevel.innerHTML)<10) {
+
+        // changing html and values of it
         diamond.innerHTML = parseFloat(diamond.innerHTML) - parseFloat(minesCost.innerHTML)
         totalSpend += parseFloat(minesCost.innerHTML)
         minesLevel.innerHTML = parseFloat(minesLevel.innerHTML) +1;
@@ -410,7 +388,10 @@ let buyMines = () => {
         cps = parseFloat(cpsIncrease.innerHTML);
         cpsIncrease.innerHTML = parseFloat(cpsIncrease.innerHTML)*n3
 
+        // calling function to change image of upgrade
         // changeMinesScr();
+
+        // changing html if it got maxed out
         if(parseFloat(minesLevel.innerHTML)==10){
             minesLevel.innerHTML = "Max";
             document.querySelector(".mines-upgrade-cost-amount").innerHTML = "Unavalable"
@@ -419,28 +400,11 @@ let buyMines = () => {
     }
 }
 
-
+// adding onclick event to call buyMines function when clicked on mines
 document.querySelector(".mines-upgrade").onclick = () => {
-    buyMines() 
-    playAudio()
-}
+    buyMines() }
 
 
-
-
-
-    // trying to create a click per second counter
-// function countclick(cps) {
-//     var x1 = 0
-//     let sum = 0
-
-//     document.getElementById("diamond").onclick = () => {
-//         return x1++
-//     }
-//     console.log(x1)
-
-// }
-// setInterval(() => {countclick(cps)},5000)
 
 
 // Saving and loading data (local storage)
@@ -469,7 +433,9 @@ function saveGame() {
         minerCostValue:parseFloat(minerCost.innerHTML),
         minerLevelValue:parseFloat(minerLevel.innerHTML),
         cpsIncreaseValue:parseFloat(cpsIncrease.innerHTML),
-        minerImageSrc : document.querySelector(".miner-icon").src,
+        minerImageSrc : document.querySelector(".pickaxe-icon").src,
+
+        // saving mines upgrade data
 
         n3Value:n3,
         minesCostValue:parseFloat(minesCost.innerHTML),
@@ -484,11 +450,16 @@ function saveGame() {
     localStorage.setItem("gameSave",JSON.stringify(gameSave))
 }
 
+// save data every 10 seconds
+
 setInterval(() => {
     saveGame();
 },10000)
 
+// function to load data on refresh
+
 function loadGame(){
+
     let savedGame = JSON.parse(localStorage.getItem("gameSave"))
 
     if (typeof savedGame.diamondValue !== "undefined") {
@@ -551,6 +522,7 @@ function loadGame(){
     }
 
     
+    // loading mines upgrade data
 
     if (typeof savedGame.n3Value !== "undefined") {
         n3 = savedGame.n3Value;
@@ -582,8 +554,9 @@ document.addEventListener("keydown",function(event){
     }
 },false)
 
+
+// function to reset game
 function resetGame() {
-    playAudio()
     if(confirm("Do you want to reset the game ?")){
         let gameSave = {};
         localStorage.setItem("gameSave", JSON.stringify(gameSave));
@@ -592,7 +565,12 @@ function resetGame() {
 
 }
 
-document.querySelector(".reset").onclick = ()=>{
-    playAudio()
-    resetGame()
-}
+document.addEventListener ('visibilitychange', function () {
+	// If the page is hidden
+	if (document.visibilityState == 'hidden')
+		// Pause music playing on channel 1
+		game.getSoundManager().getMusicOnChannel(1).pause()
+	else
+		// In all other cases, we play music on 1 channel
+		game.getSoundManager().getMusicOnChannel(1).play();
+});

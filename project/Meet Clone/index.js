@@ -39,48 +39,72 @@ let userData = [
     {
         name: "Vishesh",
         profile: "images/userImage/unnamed.jpg",
+        micStatus: true,
     },
 
     {
         name: "Arin",
         profile: "images/userImage/download.jpeg",
+        micStatus: false,
     },
     {
         name: "Uncle Sam",
         profile: "images/userImage/download (1).jpeg",
+        micStatus: true,
     },
     {
         name: "Shreya",
         profile: "images/userImage/download (2).jpeg",
+        micStatus: false,
     },
     {
         name: "Nancy",
         profile: "images/userImage/download (3).jpeg",
+        micStatus: false,
     },
     {
         name: "Hana",
         profile: "images/userImage/download (4).jpeg",
+        micStatus: true,
     },
 
     {
         name: "Two Piece",
         profile: "images/userImage/download (5).jpeg",
+        micStatus: false,
     },
     {
         name: "Tommy",
         profile: "images/userImage/download (6).jpeg",
+        micStatus: false,
     },
 ];
 
+let sortArray = (array) => {
+    let newArray = [];
+    array.forEach((user) => {
+        if (user.micStatus) {
+            newArray.unshift(user);
+        } else {
+            newArray.push(user);
+        }
+    });
+    return newArray;
+};
+
 let displayUser = () => {
     let mainHTML = "";
+
+    userData = sortArray(userData);
 
     let userDisplay = userData.length <= 8 ? userData.length : 8;
 
     for (let i = 0; i < userDisplay; i++) {
         mainHTML += `<div class="user" data-name="${userData[i].name}">
     <div class="mic-status">
-      <img src="images/mic-off.png" alt="">
+      <img src="${
+          userData[i].micStatus ? "images/open mic.png" : "images/mic-off.png"
+      }" alt="">
     </div>
     <div class="profile">
       <img src="      ${userData[i].profile}
@@ -135,7 +159,7 @@ document.querySelector(".audio").addEventListener("click", () => {
         "rgb(234, 67, 53)"
     ) {
         document.querySelector(".audio").style.backgroundColor = "#3c4043";
-        document.querySelector(".audio-img").src = "images/icons8-mic-48.png";
+        document.querySelector(".audio-img").src = "images/mic-on.png";
     } else {
         document.querySelector(".audio").style.backgroundColor = "#ea4335";
         document.querySelector(".audio-img").src = "images/mic-off.png";
@@ -196,7 +220,17 @@ document.querySelector(".more-option").addEventListener("click", () => {
     }
 });
 
+document.querySelector(".close").addEventListener("click", () => {
+    document.querySelector(".end-screen").style.display = "block";
+});
+
+document.querySelector(".rejoin").addEventListener("click", () => {
+    document.querySelector(".end-screen").style.display = "none";
+});
+
 let layoutWhenSideMenuIsOpen = () => {
+    userData = sortArray(userData);
+
     let userDisplay = userData.length <= 8 ? userData.length : 8;
     if (userDisplay === 1) {
         document.querySelectorAll(".user").forEach((user) => {
@@ -232,6 +266,8 @@ let layoutWhenSideMenuIsOpen = () => {
 };
 
 let layoutWhenSideMenuIsClose = () => {
+    userData = sortArray(userData);
+
     let userDisplay = userData.length <= 8 ? userData.length : 8;
     if (userDisplay === 1) {
         document.querySelectorAll(".user").forEach((user) => {
@@ -323,12 +359,22 @@ document.querySelector(".info").addEventListener("click", () => {
 
 const createUserList = () => {
     let memberHTML = "";
+    userData = sortArray(userData);
+
     userData.forEach((user) => {
         memberHTML += `
   <div class="user-profile-data">
-            <div><img src="${user.profile}" alt="" class="user-profile-data-img"></div>
+            <div><img src="${
+                user.profile
+            }" alt="" class="user-profile-data-img"></div>
             <div style="font-size: small;">${user.name}</div>
-            <div><img src="images/open mic.png" alt="" class="user-profile-data-mic-img"></div>
+            <div><img src="
+            ${
+                user.micStatus
+                    ? "images/open mic.png"
+                    : "images/mic-off (1).png"
+            }"
+            alt="" class="user-profile-data-mic-img"></div>
 
             <div><img src="images/dots (1).png" alt="" class="user-profile-data-dots-img"></div>
           </div>`;

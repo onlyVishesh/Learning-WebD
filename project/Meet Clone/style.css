@@ -104,7 +104,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2vw;
+    margin-bottom: 1.5vw;
     font-size: 1.7vw;
 }
 
@@ -185,6 +185,24 @@ main {
     color: #979797;
 }
 
+.user-profile-data-dots-img {
+    cursor: pointer;
+}
+
+.add-people-form {
+    font-size: 1vw;
+}
+
+.add-people-form-name {
+    padding-left: 0.5vw;
+    margin-left: 1vw;
+}
+
+.add-people-form-pic {
+    padding-left: 0.5vw;
+    margin-left: 1vw;
+    width: auto;
+}
 .user-profiles-data {
     display: flex;
     flex-direction: column;

@@ -38,57 +38,61 @@ setInterval(() => {
 let userData = [
     {
         name: "Vishesh",
-        profile: "images/userImage/unnamed.jpg",
-        micStatus: true,
+        profile: "images/userImage/download (7).jpeg",
+        micStatus: "true",
     },
 
     {
         name: "Arin",
         profile: "images/userImage/download.jpeg",
-        micStatus: false,
+        micStatus: "false",
     },
     {
         name: "Uncle Sam",
         profile: "images/userImage/download (1).jpeg",
-        micStatus: true,
+        micStatus: "true",
     },
     {
         name: "Shreya",
         profile: "images/userImage/download (2).jpeg",
-        micStatus: false,
+        micStatus: "false",
     },
     {
         name: "Nancy",
         profile: "images/userImage/download (3).jpeg",
-        micStatus: false,
+        micStatus: "false",
     },
     {
         name: "Hana",
         profile: "images/userImage/download (4).jpeg",
-        micStatus: true,
+        micStatus: "true",
     },
 
     {
         name: "Two Piece",
         profile: "images/userImage/download (5).jpeg",
-        micStatus: false,
+        micStatus: "false",
     },
     {
         name: "Tommy",
         profile: "images/userImage/download (6).jpeg",
-        micStatus: false,
+        micStatus: "false",
     },
 ];
 
 let sortArray = (array) => {
-    let newArray = [];
+    let trueArray = [];
+    let falseArray = [];
+
     array.forEach((user) => {
-        if (user.micStatus) {
-            newArray.unshift(user);
+        if (user.micStatus === "true") {
+            trueArray.push(user);
         } else {
-            newArray.push(user);
+            falseArray.push(user);
         }
     });
+    let newArray = trueArray.concat(falseArray);
+    console.log(newArray);
     return newArray;
 };
 
@@ -103,7 +107,9 @@ let displayUser = () => {
         mainHTML += `<div class="user" data-name="${userData[i].name}">
     <div class="mic-status">
       <img src="${
-          userData[i].micStatus ? "images/open mic.png" : "images/mic-off.png"
+          userData[i].micStatus === "true"
+              ? "images/open mic.png"
+              : "images/mic-off.png"
       }" alt="">
     </div>
     <div class="profile">
@@ -302,7 +308,7 @@ let layoutWhenSideMenuIsClose = () => {
     }
 };
 
-document.querySelector(".info").addEventListener("click", () => {
+function createInfoBlock() {
     if (document.querySelector(".right").style.display === "none") {
         document.querySelector(".right").style.display = "block";
         layoutWhenSideMenuIsOpen();
@@ -314,24 +320,24 @@ document.querySelector(".info").addEventListener("click", () => {
         document.querySelector(".chat").style.backgroundColor = "#202124";
         document.querySelector(".chat-img").src = "images/comment.png";
         document.querySelector(".right").innerHTML = `<div class="upper-right">
-    <div class="header">
-      <div>Meeting Details</div>
-      <div class="close-info">x</div>
-    </div>
+<div class="header">
+  <div>Meeting Details</div>
+  <div class="close-info">x</div>
+</div>
 
-    <div class="joining-info">Joining info</div>
-    <div class="meet-url">https://meet.google.com/${code}</div>
-    <div class="copy-info">
-      <img src="images/copy.png" alt="icon" style="width:1.5vw">
-      Copy Joining info
-    </div>
+<div class="joining-info">Joining info</div>
+<div class="meet-url">https://meet.google.com/${code}</div>
+<div class="copy-info">
+  <img src="images/copy.png" alt="icon" style="width:1.5vw">
+  Copy Joining info
+</div>
 
-  </div>
-  <div>
-    <div class="extra-info">
-      Google calendar attachment will be <br> shown here
-    </div>
-  </div>`;
+</div>
+<div>
+<div class="extra-info">
+  Google calendar attachment will be <br> shown here
+</div>
+</div>`;
         document.querySelector(".close-info").addEventListener("click", () => {
             document.querySelector(".right").style.display = "none";
             document.querySelector(".right").innerHTML = ``;
@@ -355,11 +361,14 @@ document.querySelector(".info").addEventListener("click", () => {
         document.querySelector(".info").style.backgroundColor = "#202124";
         document.querySelector(".info-img").src = "images/info.png";
     }
+}
+
+document.querySelector(".info").addEventListener("click", () => {
+    createInfoBlock();
 });
 
-const createUserList = () => {
+function createUserList(userData) {
     let memberHTML = "";
-    userData = sortArray(userData);
 
     userData.forEach((user) => {
         memberHTML += `
@@ -370,7 +379,7 @@ const createUserList = () => {
             <div style="font-size: small;">${user.name}</div>
             <div><img src="
             ${
-                user.micStatus
+                user.micStatus === "true"
                     ? "images/open mic.png"
                     : "images/mic-off (1).png"
             }"
@@ -381,9 +390,9 @@ const createUserList = () => {
     });
 
     document.querySelector(".user-profiles-data").innerHTML = memberHTML;
-};
+}
 
-document.querySelector(".member").addEventListener("click", () => {
+function createMemberBlock() {
     if (document.querySelector(".members").style.display === "none") {
         document.querySelector(".members").style.display = "block";
         layoutWhenSideMenuIsOpen();
@@ -397,29 +406,42 @@ document.querySelector(".member").addEventListener("click", () => {
         document.querySelector(
             ".members"
         ).innerHTML = `<div class="upper-right">
-				<div class="header">
-					<div>People</div>
-					<div class="close-info">x</div>
-				</div>
-				<div class="add-people">
-					<div><img src="images/invite.png" alt="add people" class="add-people-img"></div>
+    <div class="header">
+      <div>People</div>
+      <div class="close-info">x</div>
+    </div>
+    <div class="add-people">
+      <div><img src="images/invite.png" alt="add people" class="add-people-img"></div>
 
-					<div>Add people</div>
-				</div>
-				<div class="search-people">
-					<div><img src="images/search.png" alt="" class="search-people-img"></div>
-					<div><input type="text" placeholder="Search for people" class="search-people-input"></div>
-				</div>
-			</div>
-			<div class="member-list">
-				<div class="member-list-heading">
-					<div> IN MEETING</div>
-					<div class="total-members-count">${userData.length}</div>
-				</div>
-				<div class="user-profiles-data">
-				</div>
-			</div>`;
-        createUserList();
+      <div>Add people</div>
+    </div>
+    <div style="display: none;" class="add-people-form">
+    <label for="">Name</label>
+    <input type="text" class="add-people-form-name" placeholder="Name"><br>
+    <label for="">Profile picture</label>
+    <input type="number" min="1" max="10" class="add-people-form-pic" placeholder="1-10"><br>
+    <label for="">Mic</label>
+    
+    <input type="radio" id="r1" name="mic-s" value="true" > On
+    <input type="radio" id="r2" name="mic-s" value="false" > Off
+<br>
+    <button class="add">Add</button>
+
+  </div>
+    <div class="search-people">
+      <div><img src="images/search.png" alt="" class="search-people-img"></div>
+      <div><input type="text" placeholder="Search for people" class="search-people-input" ></div>
+    </div>
+  </div>
+  <div class="member-list">
+    <div class="member-list-heading">
+      <div> IN MEETING</div>
+      <div class="total-members-count">${userData.length}</div>
+    </div>
+    <div class="user-profiles-data">
+    </div>
+  </div>`;
+        createUserList(userData);
 
         document.querySelector(".close-info").addEventListener("click", () => {
             document.querySelector(".members").style.display = "none";
@@ -444,7 +466,98 @@ document.querySelector(".member").addEventListener("click", () => {
         document.querySelector(".member").style.backgroundColor = "#202124";
         document.querySelector(".member-img").src = "images/group.png";
     }
+
+    if (document.querySelector(".add-people")) {
+        document.querySelector(".add-people").addEventListener("click", () => {
+            if (
+                (document.querySelector(".add-people-form").style.display =
+                    "none")
+            ) {
+                document.querySelector(".add-people").style.display = "none";
+
+                document.querySelector(".add-people-form").style.display =
+                    "block";
+            }
+        });
+    }
+
+    document.querySelector(".add").addEventListener("click", () => {
+        if (
+            document.querySelector(".add-people-form-pic").value !== "" &&
+            document.querySelector(".add-people-form-name").value !== ""
+        ) {
+            let picNo = document.querySelector(".add-people-form-pic").value;
+            userData.push({
+                name: `${
+                    document.querySelector(".add-people-form-name").value
+                }`,
+                profile: `images/userImage/download (${(picNo =
+                    picNo < 11 && picNo > 0
+                        ? picNo
+                        : Math.floor(Math.random() * 11))}).jpeg`,
+                micStatus: document.querySelector('input[name="mic-s"]:checked')
+                    .value,
+            });
+            displayUser();
+
+            layoutWhenSideMenuIsOpen();
+            document.querySelector(".total-members-count").innerText =
+                userData.length;
+
+            createUserList(userData);
+
+            document.querySelector(
+                'input[name="mic-s"]:checked'
+            ).checked = false;
+
+            document.querySelector(".add-people-form-name").value = "";
+            document.querySelector(".add-people-form-pic").value = "";
+            if (
+                (document.querySelector(".add-people-form").style.display =
+                    "block")
+            ) {
+                document.querySelector(".add-people-form").style.display =
+                    "none";
+
+                document.querySelector(".add-people").style.display = "flex";
+            }
+
+            document.querySelector(".right").style.display = "block";
+            document.querySelector(".right").style.display = "none";
+            document.querySelector(".members").style.display = "none";
+            document.querySelector(".members").style.display = "block";
+        }
+    });
+
+    remove();
+}
+
+document.querySelector(".member").addEventListener("click", () => {
+    createMemberBlock();
 });
+
+function remove() {
+    const divs = document.querySelectorAll(".user-profile-data-dots-img");
+    const arr = Array.from(divs);
+    for (const [index, div] of arr.entries()) {
+        div.addEventListener("click", () => {
+            const halfBeforeTheUnwantedElement = userData.slice(0, index);
+
+            const halfAfterTheUnwantedElement = userData.slice(index + 1);
+
+            userData = halfBeforeTheUnwantedElement.concat(
+                halfAfterTheUnwantedElement
+            );
+            console.log(index);
+            displayUser();
+
+            layoutWhenSideMenuIsOpen();
+            createUserList(userData);
+            createInfoBlock();
+            createMemberBlock();
+        });
+    }
+}
 
 let messageArray = [];
 

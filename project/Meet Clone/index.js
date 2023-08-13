@@ -92,7 +92,6 @@ let sortArray = (array) => {
         }
     });
     let newArray = trueArray.concat(falseArray);
-    console.log(newArray);
     return newArray;
 };
 
@@ -376,7 +375,7 @@ function createUserList(userData) {
             <div><img src="${
                 user.profile
             }" alt="" class="user-profile-data-img"></div>
-            <div style="font-size: small;">${user.name}</div>
+            <div class="user-profile-data-name">${user.name}</div>
             <div><img src="
             ${
                 user.micStatus === "true"
@@ -548,7 +547,6 @@ function remove() {
             userData = halfBeforeTheUnwantedElement.concat(
                 halfAfterTheUnwantedElement
             );
-            console.log(index);
             displayUser();
 
             layoutWhenSideMenuIsOpen();
@@ -664,7 +662,6 @@ document.querySelector(".chat").addEventListener("click", () => {
                         document.querySelector(".take-message-input").value
                     );
                     if (messageArray.length === 1) {
-                        console.log(messageArray);
                         document.querySelector(
                             ".message-sender-name"
                         ).innerHTML = "Vishesh";

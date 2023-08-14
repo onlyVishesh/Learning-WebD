@@ -384,7 +384,7 @@ function createUserList(userData) {
             }"
             alt="" class="user-profile-data-mic-img"></div>
 
-            <div><img src="images/dots (1).png" alt="" class="user-profile-data-dots-img"></div>
+            <div><abbr title="Remove"><img src="images/dots (1).png" alt="" class="user-profile-data-dots-img"><abbr></div>
           </div>`;
     });
 

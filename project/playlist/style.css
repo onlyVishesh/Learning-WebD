@@ -1,7 +1,7 @@
 
 body{
-    padding-top: 115px;
-    padding-left: 580px;
+    padding-top: 7.1875rem;
+    padding-left: 36.25rem;
     background-color: #fff;
     width: auto;
 }
@@ -15,15 +15,15 @@ body{
     top: 0;
     left: 0;
     right: 0;
-    height: 75px;
+    height: 4.6875rem;
     z-index: 10;
 }
 
 .left-header {
     display: flex;
     align-items: center;
-    width: 200px;
-    margin-left: 15px;
+    width: 12.5rem;
+    margin-left: 0.9375rem;
 
 
 }
@@ -32,25 +32,25 @@ body{
     display: flex;
     align-items: center;
     flex: 1;
-    margin-left: 100px;
-    margin-right: 100px;
-    max-width: 825px;
+    margin-left: 6.25rem;
+    margin-right: 6.25rem;
+    max-width: 51.5625rem;
 
 }
 
 .right-header {
-    width: 180px;
+    width: 11.25rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-right: 20px;
+    margin-right: 1.25rem;
     flex-shrink: 0;
 
 }
 
 .menu {
-    width: 35px;
-    margin-right: 20px;
+    width: 2.1875rem;
+    margin-right: 1.25rem;
 }
 
 .menu:hover {
@@ -59,7 +59,7 @@ body{
 }
 
 .logo {
-    width: 130px;
+    width: 8.125rem;
 
 }
 .logo:hover {
@@ -69,27 +69,27 @@ body{
 
 .search-bar {
     flex: 1;
-    height: 40px;
-    padding-left: 12px;
-    font-size: 20px;
-    border-width: 2px;
+    height: 2.5rem;
+    padding-left: 0.75rem;
+    font-size: 1.25rem;
+    border-width: 0.125rem;
     border-style: solid;
     width: 0;
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
+    border-top-left-radius: 1.5625rem;
+    border-bottom-left-radius: 1.5625rem;
 
 }
 
 .search-bar::placeholder {
     font-family: Roboto, Arial;
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 .search {
-    width: 20px;
-    padding: 9px;
-    padding-left: 30px;
-    padding-right: 20px;
+    width: 1.25rem;
+    padding: 0.5625rem;
+    padding-left: 1.875rem;
+    padding-right: 1.25rem;
     
 }
 .search:hover {
@@ -99,7 +99,7 @@ body{
 
 
 .voice {
-    width: 26px;
+    width: 1.625rem;
 }
 
 .voice:hover {
@@ -108,7 +108,7 @@ body{
 }
 
 .upload {
-    height: 30px;
+    height: 1.875rem;
 }
 .upload:hover {
     text-decoration: none;
@@ -116,7 +116,7 @@ body{
 }
 
 .bell {
-    height: 30px;
+    height: 1.875rem;
 }
 .bell:hover {
     text-decoration: none;
@@ -124,9 +124,9 @@ body{
 }
 
 .pic {
-    height: 40px;
-    border-radius: 20px;
-    border-width: 2px;
+    height: 2.5rem;
+    border-radius: 1.25rem;
+    border-width: 0.125rem;
     border-style: solid;
     border-color: rgb(129, 129, 191);
 }
@@ -137,12 +137,12 @@ body{
     justify-content: space-between;
     background-color: white;
     align-items: center;
-    width: 100px;
-    height: 300px;
-    padding-top: 50px;
+    width: 6.25rem;
+    height: 18.75rem;
+    padding-top: 3.125rem;
     background-color: white;
     position: fixed;
-    top: 75px;
+    top: 4.6875rem;
     left: 0;
     right: 0;
     font-family: Roboto, Arial;
@@ -150,15 +150,15 @@ body{
 }
 
 .home {
-    height: 25px;
+    height: 1.5625rem;
 }
 
 .sub {
-    height: 25px;
+    height: 1.5625rem;
 }
 
 .library {
-    height: 25px;
+    height: 1.5625rem;
 }
 
 .bar-home,
@@ -167,52 +167,52 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 60px;
+    height: 3.75rem;
     justify-content: space-between;
 }
 
 .preview {
-    margin: 20px;
-    width: 450px;
-    height: 675px;
+    margin: 1.25rem;
+    width: 28.125rem;
+    height: 42.1875rem;
     background-color: #a48d0f;
-    border-radius: 20px;
+    border-radius: 1.25rem;
     font-family: Roboto, Arial;
     position: fixed;
-    top: 75px;
-    left: 100px;
+    top: 4.6875rem;
+    left: 6.25rem;
     right: 0;
 
 }
 
 .preview-image {
-    width: 385px;
-    margin: 35px;
-    border-radius: 10px;
-    margin-bottom: 0px;
+    width: 24.0625rem;
+    margin: 2.1875rem;
+    border-radius: 0.625rem;
+    margin-bottom: 0rem;
 
 }
 
 .text {
     color: #fff;
-    font-size: 33px;
+    font-size: 2.0625rem;
     font-weight: 600;
-    margin-left: 35px;
-    margin-top: 23px;
-    line-height: 50px;
+    margin-left: 2.1875rem;
+    margin-top: 1.4375rem;
+    line-height: 3.125rem;
 }
 
 .name {
-    margin-left: 35px;
-    margin-top: 25px;
+    margin-left: 2.1875rem;
+    margin-top: 1.5625rem;
     color: #fff;
-    font-size: 20px;
+    font-size: 1.25rem;
 
 }
 
 .detail {
-    margin-left: 35px;
-    margin-top: 8px;
+    margin-left: 2.1875rem;
+    margin-top: 0.5rem;
     color: #e0d9d9;
 
 }
@@ -220,12 +220,12 @@ body{
 .list,
 .share,
 .dots {
-    width: 30px;
-    margin-top: 20px;
-    margin-right: 5px;
-    padding: 6px;
+    width: 1.875rem;
+    margin-top: 1.25rem;
+    margin-right: 0.3125rem;
+    padding: 0.375rem;
     background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 33px;
+    border-radius: 2.0625rem;
 }
 
 img:hover {
@@ -234,19 +234,19 @@ img:hover {
 }
 
 .list {
-    margin-left: 35px;
+    margin-left: 2.1875rem;
 
 }
 
 .opt {
     display: flex;
-    margin-right: 35px;
-    margin-top: 25px;
+    margin-right: 2.1875rem;
+    margin-top: 1.5625rem;
 }
 
 .shuffle,
 .play {
-    width: 40px;
+    width: 2.5rem;
 }
 
 
@@ -257,14 +257,14 @@ img:hover {
 
 .preview-play {
     background-color: #fff;
-    width: 170px;
+    width: 10.625rem;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-left: 35px;
-    padding-right: 20px;
-    border-radius: 25px;
-    padding-left: 20px;
+    margin-left: 2.1875rem;
+    padding-right: 1.25rem;
+    border-radius: 1.5625rem;
+    padding-left: 1.25rem;
 
 }
 
@@ -273,11 +273,11 @@ img:hover {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding-right: 20px;
-    width: 170px;
-    margin-left: 35px;
-    border-radius: 25px;
-    padding-left: 20px;
+    padding-right: 1.25rem;
+    width: 10.625rem;
+    margin-left: 2.1875rem;
+    border-radius: 1.5625rem;
+    padding-left: 1.25rem;
     align-content: center;
 }
 
@@ -289,53 +289,53 @@ img:hover {
 .video {
     display: flex;
     vertical-align: row;
-    margin-bottom: -5px;
+    margin-bottom: -0.3125rem;
 
 }
 
 .video-no {
     font-family: Roboto, Arial;
-    font-size: 20px;
-    width: 30px;
+    font-size: 1.25rem;
+    width: 1.875rem;
     align-self: center;
 }
 
 .videos {
-    width: 200px;
-    border-radius: 10px;
+    width: 12.5rem;
+    border-radius: 0.625rem;
 }
 
 .video-detail {
-    margin-left: 10px;
+    margin-left: 0.625rem;
     word-wrap: break-word;
 }
 
 .title {
     font-family: Roboto, Arial;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 600;
 }
 
 .time {
     font-family: Roboto, Arial;
     color: rgb(132, 123, 123);
-    font-size: 15px;
-    margin-top: 16px;
+    font-size: 0.9375rem;
+    margin-top: 1rem;
 
 }
 
 .timing {
-    width: 45px;
-    height: 22px;
+    width: 2.8125rem;
+    height: 1.375rem;
     text-align: center;
     font-family: Roboto, Arial;
     background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 4px;
+    border-radius: 0.25rem;
     color: white;
     position: relative;
-    top: -34px;
-    left: 142px;
-    padding: 1px;
+    top: -2.125rem;
+    left: 8.875rem;
+    padding: 0.0625rem;
 }
 
 a {
@@ -349,60 +349,61 @@ a:hover {
     cursor: pointer;
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 67.5rem) {
     body{
-        padding-top: 50px;
-        padding-left: 80px;
+        padding-top: 3.125rem;
+        padding-left: 5rem;
         background-color: #fff;
         width: auto;
 
     }
     .side-bar {
-        width: 75px;
-        padding-left: 10px;
+        width: 4.6875rem;
+        padding-left: 0.625rem;
     }
     
     .preview{
         width: 100%;
-        height: 300px;
+        height: 18.75rem;
         position: static;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        border-radius: 0px;
-        top: 50px;
-        left: 80px;
+        border-radius: 0rem;
+        top: 3.125rem;
+        left: 5rem;
     }
 
     .preview-image {
         width: 38%;
-        margin: 35px;
-        border-radius: 10px;
+        margin: 2.1875rem;
+        border-radius: 0.625rem;
     
     }
     .details{
         display: flex;
         flex-direction: column;
-        margin-left: -50px;
-        margin-top: 50px;
+        margin-left: -3.125rem;
+        margin-top: 3.125rem;
     }
     .text {
         color: #fff;
-        font-size: 25px;
+        font-size: 1.5625rem;
         font-weight: 600;
-        line-height: 50px;
+        line-height: 3.125rem;
     }
     
     .name {
-        margin-top: 15px;
+        margin-top: 0.9375rem;
         color: #fff;
-        font-size: 16px;
+        font-size: 1rem;
     
     }
     
     .detail {
-        margin-top: 8px;
-        font-size: 8px;
+        /* height: ; */
+        margin-top: 0.5rem;
+        font-size: 0.5rem;
         color: #e0d9d9;
     
     }
@@ -410,14 +411,14 @@ a:hover {
     .list,
     .share,
     .dots {
-        width: 20px;
-        margin-top: 130px;
+        width: 1.25rem;
+        margin-top: 8.125rem;
         position: relative;
         left: -30%;
         margin-right: -1%;
-        padding: 6px;
+        padding: 0.375rem;
         background-color: rgba(255, 255, 255, 0.3);
-        border-radius: 20px;
+        border-radius: 1.25rem;
     }
     
     
@@ -430,14 +431,14 @@ a:hover {
 
     .opt {
         display: flex;
-        margin-right: 35px;
-        margin-top: -20px;
+        margin-right: 2.1875rem;
+        margin-top: -1.25rem;
         width: 90%;
     }
     
     .shuffle,
     .play {
-        width: 30px;
+        width: 1.875rem;
         margin-right: 5%;
     }
     
@@ -449,14 +450,14 @@ a:hover {
     
     .preview-play {
         background-color: #fff;
-        width: 300px;
-        height: 35px;
+        width: 18.75rem;
+        height: 2.1875rem;
         display: flex;
         align-items: center;
         justify-content:center;
-        padding-right: 20px;
-        border-radius: 25px;
-        padding-left: 20px;
+        padding-right: 1.25rem;
+        border-radius: 1.5625rem;
+        padding-left: 1.25rem;
     
     }
     
@@ -464,12 +465,12 @@ a:hover {
         background-color: rgba(255, 255, 255, 0.3);
         display: flex;
         align-items: center;
-        padding-right: 20px;
-        width: 300px;
-        height: 35px;
+        padding-right: 1.25rem;
+        width: 18.75rem;
+        height: 2.1875rem;
         justify-content:center;
-        border-radius: 25px;
-        padding-left: 20px;
+        border-radius: 1.5625rem;
+        padding-left: 1.25rem;
         align-content: center;
     }
 }

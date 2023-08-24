@@ -1,4 +1,4 @@
-<h1 align="center">Project Name - Temperature Converter
+<h1 align="center">Project Name - Tic Tac Toe
 </h1>
 <!-- ABOUT THE PROJECT -->
 

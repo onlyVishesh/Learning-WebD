@@ -1,4 +1,4 @@
-<h1 align="center">Project Name - TODO List
+<h1 align="center">Project Name - ToDo List
 </h1>
 <!-- ABOUT THE PROJECT -->
 

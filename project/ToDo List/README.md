@@ -1,4 +1,33 @@
-# Arrays and Loops
+<h1 align="center">Project Name - TODO List
+</h1>
+<!-- ABOUT THE PROJECT -->
+
+## About The Project
+This a small project created to learn JavaScript concepts. In this project i learn about array and loops with DOM manuplation.
+
+Demo Video - 
+
+
+https://github.com/onlyVishesh/Learning-WebD/assets/121187728/5bbaa06d-017c-4669-a77a-72c866d92288
+
+
+
+
+
+
+
+### Built With
+
+This project is build using - 
+
+* ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+* ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) 
+* ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) 
+
+
+## Concepts Used
+
+## Arrays and Loops
 
 This folder contain a to do list project which is based on the concepts of arrays and loops
 

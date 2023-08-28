@@ -4,7 +4,7 @@
 
 ## About The Project
 
-This a small project created to learn JavaScript concepts. In this project i learn about functions like foreach, etc exporting and importing of variable and functions with DOM manipulation.
+This a small project created to learn JavaScript concepts. In this project i learn about functions like foreach, scroll, map, etc exporting and importing of variable and functions with DOM manipulation.
 
 Demo Video -
 

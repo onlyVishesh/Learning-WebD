@@ -1,36 +1,64 @@
-import { pokemon, pokemon as pokemonsData } from "./database.js";
+import { pokemon as pokemonsData } from "./database.js";
 
-console.log(pokemonsData.forEach((pokemon) => console.log(pokemon.id)));
+// load pokemon and create filter
 
-let pokemonHTML = "";
-let nextEvolutionHTML = "";
-
-// pokemonsData.forEach((pokemon) => {
-//     pokemon.next_evolution.forEach((evaluation) => {
-//         nextEvolutionHTML += `<p>${evaluation.num}</p>`;
-//     });
-// });
-
-pokemonsData.forEach((pokemon) => {
-    pokemonHTML += `
-    <section>
-    <h2>${pokemon.num}</h2>
-    <figure> 
-    <img src="${pokemon.img}" alt="${pokemon.name} image">
-      <figcaption>${pokemon.name}</figcaption>
-    </figure>
-    <div>
-    ${pokemon.type}
-    </div>
-    <div>${pokemon.weaknesses}</div>
-    <div>
-      <h4>next evolution</h4>
-      <p>
-    
-      </p>
-    </div>
-    </section>
-    `;
+window.addEventListener("DOMContentLoaded", () => {
+    displayPokemons(pokemonsData);
 });
 
-document.querySelector(".list").innerHTML = pokemonHTML;
+function displayPokemons(pokemonsData) {
+    let displayPokemon = pokemonsData.map((pokemon) => {
+        let pokemonEvolutionHTML = `<p class="pokemon-evolutions-name">`;
+        if (pokemon.next_evolution && !pokemon.prev_evolution) {
+            pokemonEvolutionHTML += `<div><h5 class="next-evolution"> Next Evolution </h5>`;
+            pokemon.next_evolution.forEach((evolution) => {
+                pokemonEvolutionHTML += `<p class="evolutions"> ${evolution.num} ${evolution.name}</p>`;
+            });
+            pokemonEvolutionHTML += "</div>";
+        } else if (pokemon.next_evolution && pokemon.prev_evolution) {
+            pokemonEvolutionHTML += `<div><h5 class="previous-evolution"> Previous Evolution </h5>`;
+            pokemon.prev_evolution.forEach((evolution) => {
+                pokemonEvolutionHTML += `<p class="evolutions"> ${evolution.num} ${evolution.name}</p>`;
+            });
+            pokemonEvolutionHTML += "</div>";
+
+            pokemonEvolutionHTML += `<div><h5 class="next-evolution"> Next Evolution </h5>`;
+            pokemon.next_evolution.forEach((evolution) => {
+                pokemonEvolutionHTML += `<p class="evolutions"> ${evolution.num} ${evolution.name}</p>`;
+            });
+            pokemonEvolutionHTML += "</div>";
+        } else if (!pokemon.next_evolution && pokemon.prev_evolution) {
+            pokemonEvolutionHTML += `<div><h5 class="previous-evolution"> Previous Evolution </h5>`;
+            pokemon.prev_evolution.forEach((evolution) => {
+                pokemonEvolutionHTML += `<p class="evolutions previous-evolutions"> ${evolution.num} ${evolution.name}</p>`;
+            });
+            pokemonEvolutionHTML += "</div>";
+        } else {
+            pokemonEvolutionHTML += `<div class="evolutions">No Evolutions<div>`;
+        }
+        pokemonEvolutionHTML += `</p>`;
+        return `
+    <section class="pokemon-container" data-id="${pokemon.num}">
+      <h2 class="pokemon-no">${pokemon.num}</h2>
+      <figure>
+        <img src="${pokemon.img}" alt="${pokemon.name} image" class="pokemon-image">
+        <figcaption class="pokemon-name"><h3>${pokemon.name}</h3></figcaption>
+      </figure>
+      <div class="pokemon-type">
+      Type - ${pokemon.type}
+      </div>
+      <div class="pokemon-weakness">Weakness - ${pokemon.weaknesses}</div>
+      <div>
+        <h4 class="pokemon-evolutions">Evolution</h4>
+        
+        
+          ${pokemonEvolutionHTML}
+
+        
+      </div>
+    </section>
+    `;
+    });
+    displayPokemon = displayPokemon.join("");
+    document.querySelector(".list").innerHTML = displayPokemon;
+}

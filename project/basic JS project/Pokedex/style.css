@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(242, 242, 242);
+}
+
+.title {
+    font-size: 5vw;
+    text-align: center;
+    margin: 2vw;
+    font-weight: 700;
+    font-family: "Playfair Display", serif;
+}
+
+.dropdown {
+    text-align: center;
+    font-family: "Playfair Display", serif;
+}
+
+.list {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2vw;
+    padding: 1vw;
+}
+
+.pokemon-container {
+    background: linear-gradient(135deg, #90dffb, #328bc1);
+    width: 25vw;
+    height: 30vw;
+    display: flex;
+    gap: 1vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5vw 1vw;
+    border: 4px solid;
+    border-radius: 2vw;
+    cursor: pointer;
+}
+
+.pokemon-no,
+.pokemon-evolutions,
+.next-evolution,
+.previous-evolution {
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+}
+.pokemon-evolutions-name {
+    display: flex;
+    flex-direction: column;
+}
+p,
+.pokemon-weakness,
+.pokemon-type {
+    font-family: "PT Sans", sans-serif;
+}
+
+.pokemon-name,
+.pokemon-evolutions,
+.evolutions {
+    text-align: center;
+}
+
+.pokemon-evolutions {
+    margin-bottom: 0.5vw;
+}
+
+.next-evolution {
+    margin-top: 0.5vw;
+}

@@ -4,7 +4,29 @@ import { pokemon as pokemonsData } from "./database.js";
 
 window.addEventListener("DOMContentLoaded", () => {
     displayPokemons(pokemonsData);
+    createFilterDropdown();
 });
+
+function createFilterDropdown() {
+    let types = [];
+    pokemonsData.forEach((pokemon) => {
+        pokemon.type.forEach((kind) => {
+            if (!types.includes(kind)) {
+                types.push(kind);
+            }
+        });
+    });
+    types.forEach((type) => {
+        document
+            .querySelector(".type")
+            .insertAdjacentHTML(
+                "beforeend",
+                `<option class="type-option" value="${type}">${type}</option>`
+            );
+    });
+
+    return types;
+}
 
 function displayPokemons(pokemonsData) {
     let displayPokemon = pokemonsData.map((pokemon) => {

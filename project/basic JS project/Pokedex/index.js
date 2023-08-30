@@ -100,5 +100,3 @@ function displayPokemons(pokemonsData) {
     displayPokemon = displayPokemon.join("");
     document.querySelector(".list").innerHTML = displayPokemon;
 }
-
-

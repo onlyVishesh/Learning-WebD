@@ -27,6 +27,22 @@ function createFilterDropdown() {
 
     return types;
 }
+// filter pokemon
+
+document.querySelector(".type").addEventListener("click", () => {
+    let type = document.querySelector(".type").value;
+
+    const filteredPokemon = pokemonsData.filter((pokemon) => {
+        if (pokemon.type.includes(type)) {
+            return pokemon;
+        }
+    });
+    if (type === "All") {
+        displayPokemons(pokemonsData);
+    } else {
+        displayPokemons(filteredPokemon);
+    }
+});
 
 function displayPokemons(pokemonsData) {
     let displayPokemon = pokemonsData.map((pokemon) => {
@@ -84,3 +100,5 @@ function displayPokemons(pokemonsData) {
     displayPokemon = displayPokemon.join("");
     document.querySelector(".list").innerHTML = displayPokemon;
 }
+
+

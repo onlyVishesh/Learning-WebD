@@ -100,3 +100,25 @@ function displayPokemons(pokemonsData) {
     displayPokemon = displayPokemon.join("");
     document.querySelector(".list").innerHTML = displayPokemon;
 }
+
+let btn = document.querySelector("#button");
+
+window.addEventListener("scroll", () => {
+    let scroll_y = window.scrollY;
+    if (scroll_y > 300) {
+        btn.classList.add("show");
+    } else {
+        btn.classList.remove("show");
+    }
+});
+
+btn.addEventListener("click", () => {
+    ScrollToTop();
+});
+
+function ScrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    });
+}

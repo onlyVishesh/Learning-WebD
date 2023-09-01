@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Website Icon/  -->
+  <link rel="icon" type="image/x-icon" href="/images/logo1.png">
+
+  <!-- Font Awesome 6.4.0 CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+  <title>NavBar Project</title>
+</head>
+
+<body>
+
+  <!-- Creating responsive Navbar -->
+  <!-- The header section contains a logo, navigation links, a language selection dropdown, and a profile picture. It also has a toggle button for a dropdown menu on smaller screens. -->
+  <header>
+
+
+    <div id="navbar">
+
+      <!-- left side of header that contain Logo -->
+      <div id="logo-div">
+        <a href="#">
+          <img src="images/logo.png" alt="" id="logo" class="logo">
+          <p class="logo-name">Navbar</p>
+        </a>
+      </div>
+
+      <!-- right side header that contain home, about, services and profile pic options -->
+      <div class="right-header">
+
+        <div>
+          <ul class="links right-header-element">
+            <li><a href=".HOME" class="HOME">HOME</a></li>
+            <li><a href=".ABOUT" class="ABOUT">ABOUT</a></li>
+            <li><a href=".SERVICES" class="SERVICES">SERVICES</a></li>
+            <li><a href=".CONTACT-US" class="CONTACT-US">CONTACT US</a></li>
+
+          </ul>
+        </div>
+
+
+
+
+
+        <!-- ham menu  -->
+        <div class="toggle_btn">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- div for ham menu -->
+    <div class="dropdown_menu">
+      <div>
+        <ul>
+          <li><a href=".HOME" class="main-link">HOME</a></li>
+          <li><a href=".ABOUT" class="main-link">ABOUT</a></li>
+          <li><a href=".SERVICES" class="main-link">SERVICES</a></li>
+          <li><a href=".CONTACT-US" class="main-link">CONTACT US</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+  </header>
+
+  <!-- main contains all the content of the page except header and footer -->
+
+  <main>
+    <section class="brief">
+      <div class="container">
+        <h1>Navbar Project</h1>
+        <p>
+          This is a simple webpage that contains some navbar samples which you can see and if you like them free to add
+          them in you own Project.
+        </p>
+        <a href="#brief" class="explore">explore Navbars</a>
+      </div>
+    </section>
+    <section class="nav1 nav">
+      <div class="title">
+        <h2>Navbar <span>1</span></h2>
+        <aside class="subsection">
+          <!-- code link -->
+          <!-- apply btn -->
+        </aside>
+        <aside>
+          <figure>
+            <video src=""></video>
+            <figcaption></figcaption>
+          </figure>
+        </aside>
+      </div>
+    </section>
+    <section class="nav2 nav">
+      <div class="title">
+        <h2><span>Navbar </span>2</h2>
+      </div>
+    </section>
+    <section class="nav3 nav">
+      <div class="title">
+        <h2>Navbar <span>3</span></h2>
+      </div>
+    </section>
+    <section class="nav4 nav">
+      <div class="title">
+        <h2><span>Navbar </span>4</h2>
+      </div>
+    </section>
+    <section class="nav3 nav">
+      <div class="title">
+        <h2>Navbar <span>3</span></h2>
+      </div>
+    </section>
+    <section class="nav4 nav">
+      <div class="title">
+        <h2><span>Navbar </span>4</h2>
+      </div>
+    </section>
+
+
+  </main>
+
+
+
+
+
+
+
+
+
+  <a class="scroll-link top-link" href="#home">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+
+  <script src="index.js"></script>
+
+</body>
+
+</html>

@@ -36,25 +36,23 @@
 </head>
 
 <body>
-
-  <!-- Creating responsive Navbar -->
-  <!-- The header section contains a logo, navigation links, a language selection dropdown, and a profile picture. It also has a toggle button for a dropdown menu on smaller screens. -->
   <header>
+    <navbar class="navbar">
 
-
-    <div id="navbar">
-
-      <!-- left side of header that contain Logo -->
-      <div id="logo-div">
-        <a href="#">
-          <img src="images/logo.png" alt="" id="logo" class="logo">
-          <p class="logo-name">Navbar</p>
-        </a>
-      </div>
-
-      <!-- right side header that contain home, about, services and profile pic options -->
-      <div class="right-header">
-
+      <div class="nav-center">
+        <!-- nav header -->
+        <div class="nav-header">
+          <div id="logo-div">
+            <a href="#">
+              <img src="/images/logo.png" alt="" id="logo" class="logo">
+              <p class="logo-name">Navbar</p>
+            </a>
+          </div>
+          <button class="nav-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+        <!-- links -->
         <div>
           <ul class="links right-header-element">
             <li><a class="HOME">HOME</a></li>
@@ -64,30 +62,7 @@
           </ul>
         </div>
 
-
-
-
-
-        <!-- ham menu  -->
-        <div class="toggle_btn">
-          <i class="fa-solid fa-bars"></i>
-        </div>
-      </div>
-    </div>
-
-    <!-- div for ham menu -->
-    <div class="dropdown_menu">
-      <div>
-        <ul>
-          <li><a class="HOME dropdown-option">HOME</a></li>
-          <li><a class="ABOUT dropdown-option">ABOUT</a></li>
-          <li><a class="NAVBARS dropdown-option">NAVBARS</a></li>
-          <li><a class="CONTRIBUTE dropdown-option">CONTRIBUTE</a></li>
-        </ul>
-      </div>
-    </div>
-
-
+    </navbar>
   </header>
 
   <!-- main contains all the content of the page except header and footer -->

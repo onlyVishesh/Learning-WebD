@@ -11,7 +11,7 @@ html {
 }
 
 body {
-    background-color: white;
+    background-color: #f1f5f9;
     display: block;
     margin: 0px;
     overflow-x: hidden;
@@ -81,13 +81,13 @@ header {
     padding: 0 2% 0 0.5%;
     position: fixed;
     top: 0;
-    transition: 0.3s;
+    transition: 0.5s;
     width: 100%;
     z-index: 10;
 }
 
 #logo img {
-    transition: 0.3s;
+    transition: 0.5s;
 }
 
 #logo-div a {
@@ -127,17 +127,18 @@ header {
 .links a:hover {
     border-radius: 0.7rem;
     opacity: 0.7;
-    background: linear-gradient(90deg, #02ff70 0%, #01642c 100%);
+    background: linear-gradient(60deg, #02ff70 0%, #01642c 100%);
     padding: 0.2rem;
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: 75% 3px;
+    cursor: pointer;
 }
 
 .HOME {
     border-radius: 0.7rem;
     opacity: 0.7;
-    background: linear-gradient(90deg, #02ff70 0%, #01642c 100%);
+    background: linear-gradient(60deg, #02ff70 0%, #01642c 100%);
     padding: 0.2rem;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -145,7 +146,7 @@ header {
 }
 
 .links a:active {
-    background: linear-gradient(90deg, #02ff70 0%, #01642c 100%);
+    background: linear-gradient(60deg, #02ff70 0%, #01642c 100%);
     padding: 0.2rem;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -367,17 +368,20 @@ main {
         border-radius: 0.7rem;
         padding: 0.25rem;
         background-size: 75% 3px;
+        background: none;
     }
 
     .HOME {
         border-radius: 0.7rem;
         padding: 0.25rem;
         background-size: 75% 3px;
+        background: none;
     }
 
     .links a:active {
         padding: 0.25rem;
         background-size: 75% 3px;
+        background: none;
     }
 
     .toggle_btn {
@@ -402,7 +406,7 @@ main {
 
     .dropdown_menu.open {
         backdrop-filter: blur(7px);
-        background-color: #02ff706c;
+        background-color: hsl(125, 67%, 44%);
         height: fit-content;
     }
 
@@ -425,6 +429,25 @@ main {
 }
 
 @media (min-width: 501px) and (max-width: 767px) {
+    .links a:hover {
+        border-radius: 0.7rem;
+        padding: 0.25rem;
+        background-size: 75% 3px;
+        background: none;
+    }
+
+    .HOME {
+        border-radius: 0.7rem;
+        padding: 0.25rem;
+        background-size: 75% 3px;
+        background: none;
+    }
+
+    .links a:active {
+        padding: 0.25rem;
+        background-size: 75% 3px;
+        background: none;
+    }
     .toggle_btn {
         font-size: 1.6rem;
     }
@@ -471,6 +494,25 @@ main {
         width: 95%;
         top: 3.2rem;
     }
+    .links a:hover {
+        border-radius: 0.7rem;
+        padding: 0.25rem;
+        background-size: 75% 3px;
+        background: none;
+    }
+
+    .HOME {
+        border-radius: 0.7rem;
+        padding: 0.25rem;
+        background-size: 75% 3px;
+        background: none;
+    }
+
+    .links a:active {
+        padding: 0.25rem;
+        background-size: 75% 3px;
+        background: none;
+    }
 }
 
 /* Navbar1 end */
@@ -512,9 +554,10 @@ main {
 }
 
 .nav {
-    height: 20vh;
+    height: 40vh;
     background-color: #f0f0f0;
     margin: 1rem;
+    border-radius: 1rem;
 }
 
 .title h2 {
@@ -525,7 +568,7 @@ main {
 }
 
 span {
-    color: #02ff70;
+    color: hsl(125, 67%, 44%);
 }
 
 .top-link {
@@ -547,4 +590,34 @@ span {
 .show-link {
     visibility: visible;
     z-index: 100;
+}
+
+.navbar-detail {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    align-items: center;
+}
+
+.subsection {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-description {
+    font-size: 1.3rem;
+}
+
+.btn-section {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.apply,
+.code {
+    font-size: 1rem;
 }

@@ -159,6 +159,14 @@ header {
     font-size: 2rem;
 }
 
+.toggle_btn:hover {
+    transform: rotate(90deg);
+}
+
+.toggle_btn:active {
+    transform: rotate(0deg);
+}
+
 /* Drop down list style which is visible on mobile */
 .dropdown_menu {
     border-radius: 10px;

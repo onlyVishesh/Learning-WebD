@@ -67,14 +67,3 @@ window.addEventListener("scroll", () => {
         topLink.classList.remove("show-link");
     }
 });
-
-const applyBtns = document.querySelectorAll(".apply");
-
-applyBtns.forEach((applyBtn) => {
-    applyBtn.addEventListener("click", () => {
-        applyBtns.forEach((btn) => (btn.innerText = "Apply"));
-        applyBtn.innerText = "Applied";
-    });
-});
-
-applyBtns[0].innerText = "Applied";

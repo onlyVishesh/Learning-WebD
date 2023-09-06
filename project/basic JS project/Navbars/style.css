@@ -478,7 +478,7 @@ main {
 
     .dropdown_menu.open {
         backdrop-filter: blur(7px);
-        background-color: #02ff706c;
+        background-color: hsl(125, 67%, 44%);
         height: fit-content;
     }
 
@@ -562,7 +562,6 @@ main {
 }
 
 .nav {
-    height: 40vh;
     background-color: #f0f0f0;
     margin: 1rem;
     border-radius: 1rem;
@@ -610,13 +609,15 @@ span {
 .subsection {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
     justify-content: center;
     align-items: center;
 }
 
 .nav-description {
     font-size: 1.3rem;
+    padding: 1rem 2rem;
+    text-align: center;
 }
 
 .btn-section {
@@ -628,4 +629,42 @@ span {
 .apply,
 .code {
     font-size: 1rem;
+}
+
+.code,
+.apply {
+    border: 2px solid #000000;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.5s;
+}
+
+.code:hover,
+.apply:hover {
+    color: #ffffff;
+    background-color: hsl(125, 67%, 44%);
+    border: 2px solid #000000;
+}
+
+.video {
+    width: 30rem;
+    background-color: #02ff7027;
+    border: 1px solid #000;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.contribution-section {
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    background: linear-gradient(175deg, hsl(125, 67%, 44%), rgb(91, 91, 91));
+}
+
+.contribution-section p,
+a {
+    font-size: 1.3rem;
 }

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Font Awesome 6.4.0 CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <title>NavBar Project</title>
+</head>
+
+<body>
+
+  <!-- Creating responsive Navbar -->
+  <!-- The header section contains a logo, navigation links, a language selection dropdown, and a profile picture. It also has a toggle button for a dropdown menu on smaller screens. -->
+
+  <!-- navbar code start -->
+
+  <header>
+
+
+    <div id="navbar">
+
+      <!-- left side of header that contain Logo -->
+      <div id="logo-div">
+        <a href="#">
+          <img src="images/logo.png" alt="" id="logo" class="logo">
+          <p class="logo-name">Navbar</p>
+        </a>
+      </div>
+
+      <!-- right side header that contain home, about, services and profile pic options -->
+      <div class="right-header">
+
+        <div>
+          <ul class="links right-header-element">
+            <li><a class="HOME">HOME</a></li>
+            <li><a class="ABOUT">ABOUT</a></li>
+            <li><a class="NAVBARS">NAVBARS</a></li>
+            <li><a class="CONTRIBUTE">CONTRIBUTE</a></li>
+          </ul>
+        </div>
+
+
+
+
+
+        <!-- ham menu  -->
+        <div class="toggle_btn">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- div for ham menu -->
+    <div class="dropdown_menu">
+      <div>
+        <ul>
+          <li><a class="HOME dropdown-option">HOME</a></li>
+          <li><a class="ABOUT dropdown-option">ABOUT</a></li>
+          <li><a class="NAVBARS dropdown-option">NAVBARS</a></li>
+          <li><a class="CONTRIBUTE dropdown-option">CONTRIBUTE</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+  </header>
+
+  <!-- navbar code end -->
+
+  <!-- main contains all the content of the page except header and footer -->
+
+  <main class="main">
+
+    <!-- Add Your content here -->
+
+
+
+
+  </main>
+
+
+
+  <script src="index.js"></script>
+
+</body>
+
+</html>

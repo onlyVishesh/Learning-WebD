@@ -1,0 +1,528 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* Setting default font to website */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f1f5f9;
+    display: block;
+    margin: 0px;
+    overflow-x: hidden;
+    padding: 0px;
+    position: relative;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 100%;
+}
+
+button {
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+abbr {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* Adding style to navbar */
+
+li {
+    list-style: none;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+/* navbar styling */
+header {
+    position: relative;
+}
+
+/* Navbar1 start */
+
+/* navbar basic styling */
+
+#navbar {
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 0px 1px 2px;
+    display: flex;
+    gap: 2rem;
+    height: 3rem;
+    padding: 0 2% 0 0.5%;
+    position: fixed;
+    top: 0;
+    transition: 0.5s;
+    width: 100%;
+    z-index: 10;
+}
+
+#logo img {
+    transition: 0.5s;
+}
+
+#logo-div a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo {
+    height: 2.5rem;
+    margin-top: 0px;
+}
+
+.logo-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.right-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.links {
+    align-items: center;
+    display: flex;
+    font-family: "Inter";
+    font-size: 1rem;
+    font-weight: 600;
+    gap: 2.25rem;
+}
+
+/* hover effect on big screens */
+
+.links a:hover {
+    border-radius: 0.7rem;
+    opacity: 0.7;
+    background: linear-gradient(60deg, #02ff70 0%, #01642c 100%);
+    padding: 0.2rem;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 75% 3px;
+    cursor: pointer;
+}
+
+.HOME {
+    border-radius: 0.7rem;
+    opacity: 0.7;
+    background: linear-gradient(60deg, #02ff70 0%, #01642c 100%);
+    padding: 0.2rem;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 75% 3px;
+}
+
+.links a:active {
+    background: linear-gradient(60deg, #02ff70 0%, #01642c 100%);
+    padding: 0.2rem;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 75% 3px;
+}
+
+.toggle_btn {
+    cursor: pointer;
+    display: none;
+    font-size: 2rem;
+}
+
+.toggle_btn:hover {
+    transform: rotate(90deg);
+}
+
+.toggle_btn:active {
+    transform: rotate(0deg);
+}
+
+/* Drop down list style which is visible on mobile */
+.dropdown_menu {
+    border-radius: 10px;
+    display: none;
+    height: 0px;
+    overflow: hidden;
+    padding: 0.5rem;
+    position: fixed;
+    right: 1rem;
+    top: 2rem;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    width: 200px;
+    z-index: 10;
+}
+
+.dropdown_menu li {
+    align-items: center;
+    display: flex;
+    font-size: 2.5vh;
+    justify-content: center;
+    padding: 0.7rem;
+}
+
+.dropdown_menu.open {
+    backdrop-filter: blur(7px);
+    background-color: #02ff70a0;
+    height: fit-content;
+}
+
+.dropdown_menu li {
+    color: #3d4347;
+    position: relative;
+}
+
+.dropdown_menu li:after {
+    background-color: #535759;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: 0;
+    margin: 0 40% 4% 40%;
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+    width: 20%;
+}
+
+.dropdown_menu li:hover:after {
+    transform-origin: bottom left;
+}
+
+main {
+    margin-top: 3rem;
+    background-color: #f1f5f8;
+}
+
+/* media query to make nav bar responsive */
+
+@media (min-width: 1441px) and (max-width: 2560px) {
+    #navbar {
+        box-shadow: 0px 1px 2px;
+
+        gap: 3rem;
+        height: 4rem;
+    }
+
+    #logo-div a {
+        gap: 1.2rem;
+    }
+
+    .logo {
+        height: 2.75rem;
+        margin-top: 0px;
+    }
+
+    .logo-name {
+        font-size: 2rem;
+    }
+
+    .links {
+        font-size: 1.1rem;
+        font-weight: 600;
+        gap: 2.25rem;
+    }
+
+    /* hover effect on big screens */
+
+    .links a:hover {
+        border-radius: 0.7rem;
+        padding: 0.3rem;
+        background-size: 75% 3px;
+    }
+
+    .HOME {
+        border-radius: 0.7rem;
+        padding: 0.3rem;
+        background-size: 75% 3px;
+    }
+
+    .links a:active {
+        padding: 0.3rem;
+        background-size: 75% 3px;
+    }
+
+    main {
+        margin-top: 4rem;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+    #navbar {
+        gap: 2.75rem;
+        height: 3.25rem;
+    }
+
+    #logo-div a {
+        gap: 1rem;
+    }
+
+    .logo {
+        height: 2.5rem;
+        margin-top: 0px;
+    }
+
+    .logo-name {
+        font-size: 1.9rem;
+    }
+
+    .links {
+        font-size: 1rem;
+        font-weight: 600;
+        gap: 2rem;
+    }
+
+    /* hover effect on big screens */
+
+    .links a:hover {
+        border-radius: 0.7rem;
+        padding: 0.25rem;
+        background-size: 75% 3px;
+    }
+
+    .HOME {
+        border-radius: 0.7rem;
+        padding: 0.25rem;
+        background-size: 75% 3px;
+    }
+
+    .links a:active {
+        padding: 0.25rem;
+        background-size: 75% 3px;
+    }
+
+    main {
+        margin-top: 3.25rem;
+    }
+}
+
+@media (max-width: 850px) {
+    #navbar .links,
+    #navbar .language {
+        display: none;
+    }
+
+    #navbar .toggle_btn {
+        display: block;
+    }
+
+    .dropdown_menu {
+        display: block;
+    }
+
+    .dropdown_menu a {
+        color: white;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    #navbar {
+        gap: 2.5rem;
+        height: 3rem;
+    }
+
+    #logo-div a {
+        gap: 1rem;
+    }
+
+    .logo {
+        height: 1.7rem;
+        margin-top: 0px;
+    }
+
+    .logo-name {
+        font-size: 1.7rem;
+    }
+
+    .links {
+        font-size: 1rem;
+        font-weight: 600;
+        gap: 2rem;
+    }
+
+    /* hover effect on big screens */
+
+    .links a:hover {
+        border-radius: 0.7rem;
+        padding: 0.25rem;
+        background-size: 75% 3px;
+        background: none;
+    }
+
+    .HOME {
+        border-radius: 0.7rem;
+        padding: 0.25rem;
+        background-size: 75% 3px;
+        background: none;
+    }
+
+    .links a:active {
+        padding: 0.25rem;
+        background-size: 75% 3px;
+        background: none;
+    }
+
+    .toggle_btn {
+        font-size: 1.6rem;
+    }
+
+    /* Drop down list style which is visible on mobile */
+    .dropdown_menu {
+        border-radius: 10px;
+        height: 0px;
+        padding: 0.5rem;
+        right: 1rem;
+        top: 2rem;
+        width: 300px;
+        z-index: 10;
+    }
+
+    .dropdown_menu li {
+        font-size: 1.7rem;
+        padding: 0.7rem;
+    }
+
+    .dropdown_menu.open {
+        backdrop-filter: blur(7px);
+        background-color: hsl(125, 67%, 44%);
+        height: fit-content;
+    }
+
+    .dropdown_menu li {
+        color: #3d4347;
+    }
+
+    /* Hover effect on drop down list */
+
+    .dropdown_menu li:after {
+        bottom: 0;
+        height: 2px;
+        left: 0;
+        margin: 0 40% 4% 40%;
+    }
+
+    main {
+        margin-top: 3rem;
+    }
+}
+
+@media (min-width: 501px) and (max-width: 767px) {
+    .links a:hover {
+        border-radius: 0.7rem;
+        padding: 0.25rem;
+        background-size: 75% 3px;
+        background: none;
+    }
+
+    .HOME {
+        border-radius: 0.7rem;
+        padding: 0.25rem;
+        background-size: 75% 3px;
+        background: none;
+    }
+
+    .links a:active {
+        padding: 0.25rem;
+        background-size: 75% 3px;
+        background: none;
+    }
+    .toggle_btn {
+        font-size: 1.6rem;
+    }
+
+    /* Drop down list style which is visible on mobile */
+    .dropdown_menu {
+        border-radius: 10px;
+        height: 0px;
+        padding: 0.5rem;
+        right: 1rem;
+        top: 2rem;
+        width: 300px;
+        z-index: 10;
+    }
+
+    .dropdown_menu li {
+        font-size: 1.7rem;
+        padding: 0.7rem;
+    }
+
+    .dropdown_menu.open {
+        backdrop-filter: blur(7px);
+        background-color: hsl(125, 67%, 44%);
+        height: fit-content;
+    }
+
+    .dropdown_menu li {
+        color: #3d4347;
+    }
+
+    /* Hover effect on drop down list */
+
+    .dropdown_menu li:after {
+        bottom: 0;
+        height: 2px;
+        left: 0;
+        margin: 0 40% 4% 40%;
+    }
+}
+
+@media (max-width: 500px) {
+    .dropdown_menu {
+        right: 2.5%;
+        width: 95%;
+        top: 3.2rem;
+    }
+    .links a:hover {
+        border-radius: 0.7rem;
+        padding: 0.25rem;
+        background-size: 75% 3px;
+        background: none;
+    }
+
+    .HOME {
+        border-radius: 0.7rem;
+        padding: 0.25rem;
+        background-size: 75% 3px;
+        background: none;
+    }
+
+    .links a:active {
+        padding: 0.25rem;
+        background-size: 75% 3px;
+        background: none;
+    }
+}
+
+/* Navbar1 end */
+
+/* style for main */

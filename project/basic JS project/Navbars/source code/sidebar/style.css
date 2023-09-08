@@ -1,0 +1,234 @@
+html {
+    scroll-behavior: smooth;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Setting default font to website */
+
+body {
+    background-color: #f1f5f9;
+    display: block;
+    margin: 0px;
+    overflow-x: hidden;
+    padding: 0px;
+    position: relative;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 100%;
+}
+
+button {
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+abbr {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* Adding style to navbar */
+
+li {
+    list-style: none;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.navbar {
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+.nav-toggle {
+    font-size: 1.5rem;
+    color: hsl(125, 67%, 44%);
+    background: transparent;
+    border-color: transparent;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+.nav-toggle:hover {
+    color: hsl(125, 67%, 44%);
+    transform: rotate(90deg);
+}
+
+.logo img {
+    transition: 0.5s;
+}
+
+.logo-div a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo {
+    height: 2.5rem;
+    margin-top: 0px;
+}
+
+.logo-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.links a {
+    color: hsl(209, 34%, 30%);
+    font-size: 1rem;
+    text-transform: capitalize;
+    letter-spacing: 0.1rem;
+    display: block;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s linear;
+}
+.links a:hover {
+    color: hsl(125, 67%, 44%);
+    padding-right: 1.5rem;
+    cursor: pointer;
+}
+
+.links {
+    display: flex;
+    overflow: hidden;
+    transition: all 0.3s linear;
+}
+
+.nav-center {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+}
+.nav-header {
+    padding: 0;
+}
+.nav-toggle {
+    display: none;
+}
+
+.close-btn {
+    font-size: 1.75rem;
+    background: transparent;
+    border-color: transparent;
+    color: hsl(205, 78%, 60%);
+    transition: all 0.3s linear;
+    cursor: pointer;
+    color: hsl(360, 67%, 44%);
+}
+.close-btn:hover {
+    color: hsl(360, 71%, 66%);
+    transform: rotate(360deg);
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    row-gap: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s linear;
+    transform: translate(-100%);
+}
+
+.sidebar-header {
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+}
+
+.show-sidebar {
+    transform: translate(0);
+}
+
+@media screen and (max-width: 800px) {
+    .right-header-element {
+        display: none;
+    }
+    .sidebar {
+        width: 400px;
+    }
+
+    .nav-header {
+        padding: 0;
+    }
+    .nav-toggle {
+        display: block;
+    }
+    .links a {
+        display: block;
+        color: #000;
+        cursor: pointer;
+        font-size: 1.5rem;
+        text-transform: capitalize;
+        padding: 1rem 1.5rem;
+        color: hsl(208, 16%, 16%);
+        transition: all 0.3s linear;
+    }
+    .links a:hover {
+        background: hsl(205, 86%, 81%);
+        color: hsl(205, 78%, 60%);
+        padding-left: 1.75rem;
+    }
+    .links a {
+        color: hsl(209, 34%, 30%);
+        font-size: 1rem;
+        text-transform: capitalize;
+        letter-spacing: 0.1rem;
+        display: block;
+        padding: 0.5rem 1rem;
+        transition: all 0.3s linear;
+    }
+    .links a:hover {
+        color: hsl(125, 67%, 44%);
+        padding-left: 1.5rem;
+        cursor: pointer;
+    }
+
+    .links1 {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        transition: all 0.3s linear;
+    }
+}
+
+.main {
+    margin-top: 4rem;
+}

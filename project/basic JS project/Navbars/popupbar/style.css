@@ -127,7 +127,7 @@ header {
 .links a:hover {
     border-radius: 0.7rem;
     opacity: 0.7;
-    background: linear-gradient(60deg, #02ff70 0%, #01642c 100%);
+    background: linear-gradient(60deg, hsl(125, 67%, 44%) 0%, #01642c 100%);
     padding: 0.2rem;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -138,7 +138,7 @@ header {
 .HOME {
     border-radius: 0.7rem;
     opacity: 0.7;
-    background: linear-gradient(60deg, #02ff70 0%, #01642c 100%);
+    background: linear-gradient(60deg, hsl(125, 67%, 44%) 0%, #01642c 100%);
     padding: 0.2rem;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -146,7 +146,7 @@ header {
 }
 
 .links a:active {
-    background: linear-gradient(60deg, #02ff70 0%, #01642c 100%);
+    background: linear-gradient(60deg, hsl(125, 67%, 44%) 0%, #01642c 100%);
     padding: 0.2rem;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -192,7 +192,7 @@ header {
 
 .dropdown_menu.open {
     backdrop-filter: blur(7px);
-    background-color: #02ff70a0;
+    background-color: hsl(125, 67%, 44%);
     height: fit-content;
 }
 
@@ -528,9 +528,8 @@ main {
 /* style for main */
 
 .brief {
-    background: linear-gradient(rgba(0, 255, 153, 0.516), rgba(0, 0, 0, 0.7)),
-        url(images/WhatsApp\ Image\ 2023-09-07\ at\ 12.54.26\ AM.jpeg)
-            center/cover no-repeat;
+    background: linear-gradient(hsla(125, 67%, 44%, 0.8), rgba(0, 0, 0, 0.7)),
+        url(images/bgi.jpeg) center/cover no-repeat;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -647,9 +646,14 @@ span {
     border: 2px solid #000000;
 }
 
+.applied {
+    color: #ffffff;
+    background-color: hsl(125, 67%, 44%);
+    border: 2px solid #000000;
+}
+
 .video {
     width: 30rem;
-    background-color: #02ff7027;
     border: 1px solid #000;
     border-radius: 12px;
     cursor: pointer;

@@ -5,7 +5,7 @@
     align-items: center;
 }
 
-#count {
+.count {
     font-size: 200px;
 }
 
@@ -14,9 +14,9 @@
     gap: 1rem;
 }
 
-#dec,
-#reset,
-#inc {
+.dec,
+.reset,
+.inc {
     width: fit-content;
     padding: 1rem;
     font-size: 50px;

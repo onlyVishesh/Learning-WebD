@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Game</title>
+	<style>
+		body {
+			background-color: #111;
+			color: #fff;
+		}
+
+		h2 {
+			font-size: 50px;
+		}
+
+		button {
+			text-decoration: none;
+			border: none;
+		}
+
+		#rock,
+		#paper,
+		#scissors {
+			margin: 20px;
+			background-color: transparent
+		}
+
+		#rock img,
+		#paper img,
+		#scissors img {
+			height: 110px;
+			border: 5px solid #fff;
+			border-radius: 100px;
+			padding: 30px;
+			cursor: pointer;
+		}
+
+		.move-img {
+			height: 50px;
+		}
+
+		#reset {
+			font-size: 25px;
+			padding: 5px 10px 5px 10px;
+			border-radius: 5px;
+		}
+	</style>
+</head>
+
+<body>
+	<div>
+		<div>
+			<h2>Rock Paper Scissors</h2>
+		</div>
+
+		<div style="display: flex;
+								flex-direction: row;
+								margin-left: 50px;
+								">
+			<div>
+				<button id="rock">
+					<img src="images/rock-emoji.png" alt="">
+				</button>
+			</div>
+			<div>
+				<button id="paper">
+					<img src="images/paper-emoji.png" alt="">
+				</button>
+			</div>
+			<div>
+				<button id="scissors">
+					<img src="images/scissors-emoji.png" alt="">
+				</button>
+			</div>
+		</div>
+		<div>
+			<p id="result" style="font-size: 30px">Press above button to start</p>
+		</div>
+		<div>
+			<button id="reset">
+				Restart
+			</button>
+		</div>
+
+
+	</div>
+
+	<script>
+
+		let score = JSON.parse(localStorage.getItem('score'))
+
+		if (score === "null") {
+			score = {
+				wins: 0,
+				losses: 0,
+				ties: 0
+			}
+		}
+		else {
+			document.getElementById("result").innerHTML = `
+				Total Wins - ${score.wins} <br> 
+				Total Losses - ${score.losses} <br> 
+				Total Ties - ${score.ties} <br>
+				score - ${score.wins - score.losses}`;
+		}
+
+
+
+
+		let num;
+		let userMove = '';
+		let result = '';
+
+
+		function pickComputerMove() {
+			num = Math.random();
+			let computerMove = '';
+
+			if (num >= 0 && num < (1 / 3)) {
+				computerMove = "rock";
+			} else if (num >= (1 / 3) && num < (2 / 3)) {
+				computerMove = "paper";
+			} else if (num >= (2 / 3) && num < 1) {
+				computerMove = "scissors";
+			}
+
+			return computerMove;
+
+		}
+
+
+		function playGame(userMove) {
+			if (userMove === 'rock') {
+
+				if (computerMove === userMove) {
+					result = 'Tie';
+					score.ties++;
+				} else if (computerMove === 'paper') {
+					result = 'Lose';
+					score.losses++;
+				} else if (computerMove === 'scissors') {
+					result = 'Win';
+					score.wins++;
+				}
+
+			}
+			else if (userMove === 'paper') {
+
+				if (computerMove === userMove) {
+					result = 'Tie';
+					score.ties++;
+				} else if (computerMove === 'scissors') {
+					result = 'Lose';
+					score.losses++;
+				} else if (computerMove === 'rock') {
+					result = 'Win';
+					score.wins++;
+				}
+
+			}
+			else if (userMove === 'scissors') {
+
+				if (computerMove === userMove) {
+					result = 'Tie';
+					score.ties++;
+				} else if (computerMove === 'rock') {
+					result = 'Lose';
+					score.losses++;
+				} else if (computerMove === 'paper') {
+					result = 'Win';
+					score.wins++;
+				}
+
+			}
+
+			localStorage.setItem('score', JSON.stringify(score));
+
+		}
+
+
+		function display(userMove, computerMove, result, score) {
+			document.getElementById("result").innerHTML = `You ${result}. <br>
+			You <img src="images/${userMove}-emoji.png" class="move-img"> 
+			 
+			 <img src="images/${computerMove}-emoji.png" class="move-img">Computer  <br>
+				Total Wins - ${score.wins} <br> 
+				Total Losses - ${score.losses} <br> 
+				Total Ties - ${score.ties} <br>
+				score - ${score.wins - score.losses}`;
+		}
+
+
+		function reset() {
+			document.getElementById("reset").onclick = () => {
+				score.wins = 0;
+				score.losses = 0;
+				score.ties = 0;
+				document.getElementById("result").innerHTML = `Resetting done. Press above to start again<br>
+					Total Wins - ${score.wins} <br> 
+					Total Losses - ${score.losses} <br> 
+					Total Ties - ${score.ties} <br>
+					score - ${score.wins - score.losses}`;
+
+
+				localStorage.setItem('score', JSON.stringify(score));
+
+			}
+		}
+
+
+
+		document.getElementById("rock").onclick = () => {
+
+			userMove = 'rock';
+			computerMove = pickComputerMove();
+
+			playGame(userMove);
+			display(userMove, computerMove, result, score);
+
+		}
+
+		document.getElementById("paper").onclick = () => {
+
+			userMove = 'paper';
+			computerMove = pickComputerMove();
+			playGame(userMove);
+			display(userMove, computerMove, result, score);
+
+		}
+
+		document.getElementById("scissors").onclick = () => {
+
+			userMove = 'scissors';
+			computerMove = pickComputerMove();
+			playGame(userMove);
+			display(userMove, computerMove, result, score);
+
+		}
+
+		reset()
+
+
+	</script>
+</body>
+
+</html>

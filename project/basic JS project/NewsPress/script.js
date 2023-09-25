@@ -1,7 +1,48 @@
 const container = document.querySelector(".container");
 const optionsContainer = document.querySelector(".options-container");
 let country = "in"
+const countryList = [
+  { name: "Australia", code: "AU" },
+  { name: "Bangladesh", code: "BD" },
+  { name: "Belgium", code: "BE" },
+  { name: "Bhutan", code: "BT" },
+  { name: "China", code: "CN" },
+  { name: "Egypt", code: "EG" },
+  { name: "France", code: "FR" },
+  { name: "Germany", code: "DE" },
+  { name: "Hong Kong", code: "HK" },
+  { name: "India", code: "IN" },
+  { name: "Iraq", code: "IQ" },
+  { name: "Ireland", code: "IE" },
+  { name: "Japan", code: "JP" },
+  { name: "Mexico", code: "MX" },
+  { name: "Nepal", code: "NP" },
+  { name: "Netherlands", code: "NL" },
+  { name: "New Zealand", code: "NZ" },
+  { name: "Pakistan", code: "PK" },
+  { name: "Russian", code: "RU" },
+  { name: "Saudi Arabia", code: "SA" },
+  { name: "Singapore", code: "SG" },
+  { name: "South Africa", code: "ZA" },
+  { name: "Sri Lanka", code: "LK" },
+  { name: "Sweden", code: "SE" },
+  { name: "Switzerland", code: "CH" },
+  { name: "Taiwan", code: "TW" },
+  { name: "Turkey", code: "TR" },
+  { name: "Ukraine", code: "UA" },
+  { name: "United States of America", code: "US" },
+];
 
+function createDropdown() {
+  countryList.forEach((country) => {
+      document
+          .querySelector(".type")
+          .insertAdjacentHTML(
+              "beforeend",
+              `<option class="type-option" value="${country.code}">${country.name}</option>`
+          );
+  });
+}
 
 const options = [
   "general",
@@ -60,7 +101,16 @@ const selectCategory = (e, category) => {
 };
 
 
-
+const selectCountry = () => {
+  selectElement = document.querySelector('.type');
+        country = selectElement.value;
+        requestURL = `https://newsapi.org/v2/top-headlines?country=${country.toLowerCase()}&category=general&apiKey=${apiKey}`;
+        getNews()
+}
+document.querySelector(".search-btn").addEventListener("click", ()=> {
+  selectCountry()
+      
+})
   
 
 // })
@@ -80,6 +130,7 @@ const init = () => {
   optionsContainer.innerHTML = "";
   getNews();
   createOptions();
+  createDropdown()
 };
 
 window.onload = () => {

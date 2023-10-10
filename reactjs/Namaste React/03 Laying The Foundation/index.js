@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-// using react
+// using react (react element)
 
 const heading_react = React.createElement(
   "h1",
@@ -50,3 +50,26 @@ const Container_jsx = (
 
 const root_jsx = ReactDOM.createRoot(document.querySelector("#root_jsx"));
 root_jsx.render(Container_jsx);
+
+// React Components - name start with capital letter
+// Functional - New
+// Class Based Components - Old
+
+const para_component = <p>This heading is written using React Component</p>;
+
+const HeaderComponent = () => {
+  return (
+    <div>
+      <h1>Hello, React Component!!</h1>
+      {para_component}
+    </div>
+  );
+};
+
+// Functional Components used as tag
+// react element use as variable in {}
+
+const root_component = ReactDOM.createRoot(
+  document.querySelector("#root_component")
+);
+root_component.render(<HeaderComponent />);

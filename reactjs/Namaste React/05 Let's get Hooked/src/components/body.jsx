@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { restaurantData } from "../config";
 import RestaurantCards from "./RestaurantCards";
 
@@ -38,7 +40,10 @@ const Body = () => {
             setSearchText("");
           }}
         >
-          Search
+          <FontAwesomeIcon
+            icon={faMagnifyingGlass}
+            className="search-btn-icon"
+          />
         </button>
       </div>
       <div className="cards">

@@ -1,13 +1,9 @@
-import {logo_url} from "../config"
+import { logo_url } from "../config";
 
 const Title = () => {
   return (
     <a href="/">
-      <img
-        src={logo_url}
-        alt="Food Villa"
-        className="logo"
-      />
+      <img src={logo_url} alt="Food Villa" className="logo" />
     </a>
   );
 };
@@ -15,7 +11,7 @@ const Title = () => {
 const Header = () => {
   return (
     <div className="header">
-      <Title/>
+      <Title />
       <div className="nav-items">
         <ul>
           <li>Home</li>

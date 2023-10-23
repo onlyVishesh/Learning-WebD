@@ -4,7 +4,6 @@ import Header from "./components/Header";
 import Body from "./components/body";
 import Footer from "./components/Footer";
 
-
 /**
   Online Food Ordering Site - Food Villa
 
@@ -30,12 +29,11 @@ import Footer from "./components/Footer";
 
 */
 
-
 const AppLayout = () => {
   return (
     <>
       <Header />
-      <Body/>
+      <Body />
       <Footer />
     </>
   );

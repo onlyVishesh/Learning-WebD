@@ -4,3 +4,5 @@ export const logo_url =
 export const img_CDM_url =
   "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
 
+export const restaurantCards = 20;
+

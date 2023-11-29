@@ -50,7 +50,7 @@ const RestaurantMenu = () => {
           {restaurant?.data?.cards[0]?.card?.card?.info?.veg ? (
             <p>Veg</p>
           ) : (
-            <p>Non - Veg</p>
+            <p>Non-Veg</p>
           )}
 
           <p>{restaurant?.data?.cards[0]?.card?.card?.info?.sla?.slaString}</p>

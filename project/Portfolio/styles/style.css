@@ -219,4 +219,248 @@ section {
 .header-content .right-header p::first-letter {
   font-size: 150%;
   font-weight: 500;
+}
+
+.main-title {
+  text-align: center;
+}
+.main-title h2 {
+  font-size: 4rem;
+  font-weight: 700;
+  position: relative;
+  text-transform: uppercase;
+}
+.main-title h2 span {
+  color: var(--color-secondary);
+}
+.main-title h2 .bg-text {
+  color: var(--color-gray-5);
+  font-size: 6.3rem;
+  font-weight: 800%;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: var(--transition-1);
+  z-index: -1;
+}
+
+.about-container {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  overflow-y: hidden;
+  padding-bottom: 4rem;
+  padding-top: 2rem;
+}
+.about-container .left-about {
+  padding-right: 5rem;
+}
+.about-container .left-about h4 {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+.about-container .left-about p {
+  color: var(--color-gray-1);
+  line-height: 2rem;
+  padding: 1rem;
+}
+.about-container .right-about {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+.about-container .right-about .about-item {
+  border: 1px solid var(--color-gray-5);
+  border-radius: 5px;
+  box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.1);
+  transition: var(--transition-1);
+}
+.about-container .right-about .about-item:hover {
+  border: 1px solid var(--color-secondary);
+  box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.32);
+  cursor: default;
+  transform: translateY(-5px);
+}
+.about-container .right-about .about-item .abt-text {
+  display: flex;
+  flex-direction: column;
+  padding: 1.4rem;
+}
+.about-container .right-about .about-item .abt-text .large-text {
+  color: var(--color-secondary);
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+.about-container .right-about .about-item .abt-text .small-text {
+  color: var(--color-gray-1);
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  padding: 0rem 3rem;
+  position: relative;
+  text-transform: uppercase;
+}
+.about-container .right-about .about-item .abt-text .small-text::before {
+  background-color: var(--color-gray-5);
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
+  top: 15px;
+  width: 2rem;
+}
+
+.about-stats {
+  padding-bottom: 4rem;
+}
+.about-stats .progress-bars {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+.about-stats .progress-bars .progress-bar {
+  display: flex;
+  flex-direction: column;
+}
+.about-stats .progress-bars .progress-bar .prog-title {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.about-stats .progress-bars .progress-bar .progress-container {
+  align-items: center;
+  display: flex;
+}
+.about-stats .progress-bars .progress-bar .progress-container .prog-text {
+  color: var(--color-gray-2);
+}
+.about-stats .progress-bars .progress-bar .progress-container .progress {
+  background-color: var(--color-gray-4);
+  height: 0.45rem;
+  margin-left: 1rem;
+  position: relative;
+  width: 100%;
+}
+.about-stats .progress-bars .progress-bar .progress-container .progress span {
+  background-color: var(--color-secondary);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.stat-title {
+  font-size: 1.4rem;
+  padding: 3.5rem 0;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+}
+.stat-title::before {
+  background-color: var(--color-gray-5);
+  content: "";
+  height: 6px;
+  left: 50%;
+  position: absolute;
+  top: 0%;
+  transform: translateX(-50%);
+  width: 40%;
+}
+
+.timeline {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  padding-bottom: 3rem;
+}
+.timeline .timeline-item {
+  border-left: 1px solid var(--color-gray-5);
+  padding-left: 3rem;
+  position: relative;
+}
+.timeline .timeline-item .tl-icon {
+  align-items: center;
+  background-color: var(--color-secondary);
+  border-radius: 50%;
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  left: -27px;
+  position: absolute;
+  top: 0;
+  width: 50px;
+}
+.timeline .timeline-item .tl-icon i {
+  color: var(--color-white);
+  font-size: 1.2rem;
+}
+.timeline .timeline-item .tl-duration {
+  background-color: var(--color-gray-5);
+  border-radius: 15px;
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.2rem 0.6rem;
+  text-transform: uppercase;
+}
+.timeline .timeline-item h5 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 1rem 0;
+  text-transform: uppercase;
+}
+.timeline .timeline-item h5 span {
+  color: var(--color-gray-2);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.timeline .timeline-item p {
+  color: var(--color-gray-2);
+}
+.timeline .timeline-item .tl-para {
+  padding-left: 5%;
+  text-align: justify;
+  width: 85%;
+}
+
+.controls {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  position: fixed;
+  right: 3%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+.controls .active-btn {
+  background-color: var(--color-secondary) !important;
+  transition: var(--transition-1);
+}
+.controls .active-btn i {
+  color: var(--color-white) !important;
+}
+.controls .control {
+  align-items: center;
+  animation: none;
+  background-color: var(--color-gray-4);
+  border-radius: 50%;
+  box-shadow: var(--box-shadow-1);
+  cursor: pointer;
+  display: flex;
+  height: 55px;
+  justify-content: center;
+  margin: 0.7rem 0;
+  padding: 1rem;
+  transition: all 0.1s ease-in-out;
+  width: 55px;
+}
+.controls .control i {
+  color: var(--color-gray-2);
+  font-size: 1.4rem;
+  pointer-events: none;
+}
+.controls .control:active {
+  transform: translateX(-5px);
 }/*# sourceMappingURL=style.css.map */

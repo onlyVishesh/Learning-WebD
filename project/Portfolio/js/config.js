@@ -40,3 +40,42 @@ export const timelineData = [
     about: `a remarkable joint initiative by both faculty and students, strives to elevate our institution and align it with esteemed national and international counterparts. - Focussing on empowering students to excel beyond their academic knowledge, honing their skills for real-world challenges.`,
   },
 ];
+
+export const projectData = [
+  {
+    imageURL: "ambuvians.png",
+    name: "Ambuvians Website",
+    website: "https://ambuvians.vercel.app/",
+    github: "https://github.com/onlyVishesh/ambuvians",
+  },
+  {
+    imageURL: "weatherApp.png",
+    name: "Weather App",
+    website: "https://weather-app-onlyvishesh.vercel.app/",
+    github: "https://github.com/onlyVishesh/Weather-App",
+  },
+  {
+    imageURL: "diamondClicker.png",
+    name: "Diamond Clicker Game",
+    website: "https://diamond-clicker-game.vercel.app/",
+    github: "https://github.com/onlyVishesh/Diamond-Clicker-Game",
+  },
+  {
+    imageURL: "meetClone.png",
+    name: "Meet Clone",
+    website: "https://meet-clone-five.vercel.app/",
+    github: "https://github.com/onlyVishesh/Meet-Clone",
+  },
+  {
+    imageURL: "navbar.png",
+    name: "Navigation bars",
+    website: "https://navbars-zeta.vercel.app/",
+    github: "https://github.com/onlyVishesh/Navbars",
+  },
+  {
+    imageURL: "newsApp.png",
+    name: "News App",
+    website: "https://newspress-zeta.vercel.app/",
+    github: "https://github.com/onlyVishesh/NewsPress",
+  },
+];

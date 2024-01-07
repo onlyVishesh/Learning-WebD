@@ -1,4 +1,4 @@
-import {skillData, statsData, timelineData } from "./config.js";
+import { skillData, statsData, timelineData, projectData } from "./config.js";
 
 const allSection = document.querySelector(".main-content");
 const sections = document.querySelectorAll(".section");
@@ -108,3 +108,34 @@ const timelineHTML = timelineData
 
 const timeline = document.querySelector(".timeline");
 timeline.innerHTML = timelineHTML;
+
+const portfoliosHTML = projectData
+  .map((project) => {
+    return `<div class="portfolio-item">
+    <abbr title="${project.name}">
+    <div class="image">
+      <img
+        src="../images/${project.imageURL}"
+        alt="${project.name}"
+        loading="lazy"
+        
+      />
+    </div>
+    <div class="hover-items">
+      <h3>Project Source</h3>
+      <div class="icons">
+        <a href=${project.website} target="_blank" class="icon">
+          <i class="fa-solid fa-link"></i>
+        </a>
+        <a href=${project.github} target="_blank" class="icon">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </div>
+    </div>
+    </abbr>
+  </div>`;
+  })
+  .join("");
+
+const portfolios = document.querySelector(".portfolios");
+portfolios.innerHTML = portfoliosHTML;

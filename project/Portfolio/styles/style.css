@@ -495,6 +495,99 @@ section {
   transform: scale(1);
 }
 
+.contact-content-con {
+  display: flex;
+  padding-top: 3.5rem;
+}
+.contact-content-con .left-contact {
+  flex: 2;
+}
+.contact-content-con .left-contact h4 {
+  font-size: 2rem;
+  margin-top: 1rem;
+  text-transform: uppercase;
+}
+.contact-content-con .left-contact p {
+  line-height: 2rem;
+  margin: 1rem 0;
+}
+.contact-content-con .left-contact .contact-info .contact-item {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+.contact-content-con .left-contact .contact-info .contact-item .icon {
+  align-items: center;
+  display: flex;
+  grid-gap: 0.5rem;
+  grid-template-columns: 40px 1fr;
+}
+.contact-content-con .left-contact .contact-info .contact-item .icon i {
+  align-items: center;
+  color: var(--color-white);
+  display: flex;
+  font-size: 1.3rem;
+}
+.contact-content-con .left-contact .contact-info .contact-item p {
+  margin: 0.3rem 0 !important;
+  padding: 0 !important;
+}
+.contact-content-con .left-contact .contact-icon {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.contact-content-con .left-contact .contact-icon a {
+  align-items: center;
+  background-color: var(--color-gray-5);
+  border-radius: 50%;
+  color: var(--color-white);
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  transition: var(--transition-1);
+  width: 50px;
+}
+.contact-content-con .left-contact .contact-icon a i {
+  align-items: center;
+  color: var(--color-white);
+  display: flex;
+  font-size: 1.3rem;
+  justify-content: center;
+}
+.contact-content-con .left-contact .contact-icon a:hover {
+  background-color: var(--color-secondary);
+}
+.contact-content-con .left-contact .contact-icon a:hover i {
+  color: var(--color-primary);
+}
+.contact-content-con .right-contact {
+  flex: 3;
+  margin-left: 3rem;
+}
+.contact-content-con .right-contact .input-control {
+  margin: 1.5rem 0;
+}
+.contact-content-con .right-contact .input-control input,
+.contact-content-con .right-contact .input-control textarea {
+  background-color: var(--color-gray-5);
+  border: none;
+  border-radius: 30px;
+  color: var(--color-white);
+  outline: none;
+  padding: 0.8rem 1.1rem;
+  resize: none;
+  width: 100%;
+}
+.contact-content-con .right-contact .input-control-1 {
+  display: flex;
+  gap: 2rem;
+}
+.contact-content-con .right-contact .submit-btn {
+  display: flex;
+  justify-content: flex-start;
+}
+
 .controls {
   align-items: center;
   display: flex;

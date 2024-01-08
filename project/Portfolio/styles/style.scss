@@ -555,6 +555,112 @@ section {
   }
 }
 
+// ! Contact content
+
+.contact-content-con {
+  display: flex;
+  padding-top: 3.5rem;
+
+  .left-contact {
+    flex: 2;
+
+    h4 {
+      font-size: 2rem;
+      margin-top: 1rem;
+      text-transform: uppercase;
+    }
+    p {
+      line-height: 2rem;
+      margin: 1rem 0;
+    }
+    .contact-info {
+      .contact-item {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+
+        .icon {
+          align-items: center;
+          display: flex;
+          grid-gap: 0.5rem;
+          grid-template-columns: 40px 1fr;
+
+          i {
+            align-items: center;
+            color: var(--color-white);
+            display: flex;
+            font-size: 1.3rem;
+          }
+        }
+        p {
+          margin: 0.3rem 0 !important;
+          padding: 0 !important;
+        }
+      }
+    }
+    .contact-icon {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+
+      a {
+        align-items: center;
+        background-color: var(--color-gray-5);
+        border-radius: 50%;
+        color: var(--color-white);
+        display: flex;
+        height: 50px;
+        justify-content: center;
+        transition: var(--transition-1);
+        width: 50px;
+
+        i {
+          align-items: center;
+          color: var(--color-white);
+          display: flex;
+          font-size: 1.3rem;
+          justify-content: center;
+        }
+        &:hover {
+          background-color: var(--color-secondary);
+
+          i {
+            color: var(--color-primary);
+          }
+        }
+      }
+    }
+  }
+  .right-contact {
+    flex: 3;
+    margin-left: 3rem;
+
+    .input-control {
+      margin: 1.5rem 0;
+
+      input,
+      textarea {
+        background-color: var(--color-gray-5);
+        border: none;
+        border-radius: 30px;
+        color: var(--color-white);
+        outline: none;
+        padding: 0.8rem 1.1rem;
+        resize: none;
+        width: 100%;
+      }
+    }
+    .input-control-1 {
+      display: flex;
+      gap: 2rem;
+    }
+    .submit-btn {
+      display: flex;
+      justify-content: flex-start;
+    }
+  }
+}
+
 .controls {
   align-items: center;
   display: flex;

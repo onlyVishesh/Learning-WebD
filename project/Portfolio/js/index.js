@@ -42,7 +42,6 @@ const pageTransition = () => {
     let element = document.body;
     element.classList.toggle("light-mode");
   });
-
 };
 
 pageTransition();

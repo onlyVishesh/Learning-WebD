@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
 
 // ! Reset !
-
 *,
 *::after,
 *::before {
@@ -286,7 +285,7 @@ section {
   }
 }
 
-// ! About Content
+// ! About Content !
 
 .about-container {
   display: grid;
@@ -359,7 +358,7 @@ section {
   }
 }
 
-// ! Skills
+// ! Skills !
 
 .about-stats {
   padding-bottom: 4rem;
@@ -423,7 +422,7 @@ section {
   }
 }
 
-// ! Timeline
+// ! Timeline !
 
 .timeline {
   display: grid;
@@ -485,7 +484,7 @@ section {
   }
 }
 
-// ! Portfolio Content
+// ! Portfolio Content !
 
 .portfolio {
   .port-text {
@@ -570,7 +569,7 @@ section {
   }
 }
 
-// ! Contact content
+// ! Contact content !
 
 .contact-content-con {
   display: flex;
@@ -676,6 +675,8 @@ section {
   }
 }
 
+// ! Control Buttons !
+
 .controls {
   align-items: center;
   display: flex;
@@ -722,6 +723,8 @@ section {
   }
 }
 
+// ! Theme Button !
+
 .theme-btn {
   align-items: center;
   background-color: var(--color-gray-4);
@@ -746,3 +749,5 @@ section {
     transform: translateY(-5px);
   }
 }
+
+@import "./media";
